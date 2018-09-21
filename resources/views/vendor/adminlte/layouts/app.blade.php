@@ -45,10 +45,9 @@ desired effect
         <section class="content">
             <!-- Your Page Content Here -->
             @yield('main-content')
-            @yield('usersForm')
-            @yield('usersList')
             @yield('productsForm')
             @yield('productsList')
+            @yield('productEdit')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

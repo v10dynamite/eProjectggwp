@@ -15,10 +15,12 @@
 					Add Users
 				@elseif(Request::is('usersList'))
 					List Users
-				@elseif(Request::is('productsForm'))
+				@elseif(Request::is('product/create'))
 					Add Product
-				@elseif(Request::is('productsList'))
+				@elseif(Request::is('product'))
 					List Products
+				@else
+					Updating...
 				@endif
 			</li>
 		</ol>

@@ -45,14 +45,6 @@
                         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <select required class="form-control" name="usertype" style="-webkit-appearance: none;-moz-appearance: none;appearance: none;color: gray;">
-                            <option value="0" disabled selected>User type</option>
-                            <option value="Admin">Admin</option>
-                            <option value="User">User</option>
-                        </select>
-                        <span class="glyphicon glyphicon-menu-down form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
                         <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.birthday') }}" onfocus="(this.type='date')" name="birthday"/>
                         <span class="glyphicon glyphicon-bitcoin form-control-feedback"></span>
                     </div>
