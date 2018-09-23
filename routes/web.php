@@ -26,4 +26,19 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
     
 	Route::resource('product', 'ProductController');
+
+	Route::get('/ajaxdata', [
+		'as' => 'ajaxdata',
+		'uses' => 'AjaxdataController@index'
+	]);
+
+	Route::get('/ajaxdata/getdata', [
+		'as' => 'ajaxdata.getdata',
+		'uses' => 'AjaxdataController@getdata'
+	]);
+
+	Route::post('/ajaxdata/postdata', [
+		'as' => 'ajaxdata.postdata',
+		'uses' => 'AjaxdataController@postdata'
+	]);
 });

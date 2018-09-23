@@ -37,6 +37,7 @@
                     <li><a href="{{ url('product') }}">{{ trans('adminlte_lang::message.listproduct') }}</a></li>
                 </ul>
             </li>
+            <li class="{{ Request::is('ajaxdata') ? "active" : "" }}"><a href="{{ url('ajaxdata') }}"><i class='fa fa-link'></i> <span>Product management by ajax</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

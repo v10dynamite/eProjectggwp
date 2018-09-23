@@ -52,7 +52,7 @@
 							<th>Edit</th>
 						</tr>
 					</tfoot>
-					<tbody id="myTable">
+					<tbody>
 						@php
 							$count = 1;
 						@endphp

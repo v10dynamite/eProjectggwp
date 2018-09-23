@@ -48,6 +48,7 @@ desired effect
             @yield('productsForm')
             @yield('productsList')
             @yield('productEdit')
+            @yield('ajaxall')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
