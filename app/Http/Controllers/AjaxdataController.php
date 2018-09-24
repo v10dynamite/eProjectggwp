@@ -50,7 +50,7 @@ class AjaxdataController extends Controller
     	}
     	$output = array(
     		'error' => $error_array,
-    		'success' => $success_output
+    		'success' => $success_output,
     	);
     	echo json_encode($output);
     }
