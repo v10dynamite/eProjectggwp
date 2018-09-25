@@ -38,17 +38,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|min:1|max:16',
+            'title' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'price' => 'required',
             'description' => 'required'
-        ],[
-            'title.required' => 'not null',
-            'title.min' =>' title can lon hon 1',
-            'title.max' =>' title can nho hon 16',
-        ]
-        );
-
+        ], [
+            // 'title.required' => 'not null',
+            // 'title.min' =>' title can lon hon 1', // DAY LA PHAN RENAME VALIDATE
+            // 'title.max' =>' title can nho hon 10',
+        ]);
         $product = new Product();
         $input = $request->all();
         if ($request->hasFile('thumbnail')) {
