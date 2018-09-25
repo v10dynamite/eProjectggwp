@@ -38,17 +38,28 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'thumbnail' => 'required',
+            'title' => 'required|min:1|max:16',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'price' => 'required',
             'description' => 'required'
-        ]);
-        $product = new Product([
-            'title' => $request->get('title'),
-            'thumbnail' => $request->get('thumbnail'),
-            'price' => $request->get('price'),
-            'description' => $request->get('description')
-        ]);
+        ],[
+            'title.required' => 'not null',
+            'title.min' =>' title can lon hon 1',
+            'title.max' =>' title can nho hon 16',
+        ]
+        );
+
+        $product = new Product();
+        $input = $request->all();
+        if ($request->hasFile('thumbnail')) {
+            $image = $request->file('thumbnail');
+            $image->move(public_path('img'), $image->getClientOriginalName());
+            $image_url = asset('img').'/'.$image->getClientOriginalName();
+        }
+        $product->title = $input['title'];
+        $product->thumbnail = $image_url;
+        $product->price = $input['price'];
+        $product->description = $input['description'];
         $product->save();
         return redirect()->route('product.create')->with('success', 'Data Added');
     }
@@ -87,15 +98,21 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'thumbnail' => 'required',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'price' => 'required',
             'description' => 'required'
         ]);
         $product = Product::find($id);
-        $product->title = $request->get('title');
-        $product->thumbnail = $request->get('thumbnail');
-        $product->price = $request->get('price');
-        $product->description = $request->get('description');
+        $input = $request->all();
+        if ($request->hasFile('thumbnail')) {
+            $image = $request->file('thumbnail');
+            $image->move(public_path('img'), $image->getClientOriginalName());
+            $image_url = asset('img').'/'.$image->getClientOriginalName();
+        }
+        $product->title = $input['title'];
+        $product->thumbnail = $image_url;
+        $product->price = $input['price'];
+        $product->description = $input['description'];
         $product->save();
         return redirect()->route('product.index')->with('success', 'Data Updated');
     }

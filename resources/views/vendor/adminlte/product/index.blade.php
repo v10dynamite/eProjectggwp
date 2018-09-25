@@ -18,7 +18,7 @@
 		<div class="box-body">
 			@if(\Session::has('success'))
 				<div class="alert alert-success">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<button class="close" data-dismiss="alert" aria-label="close">&times;</button>
 					<ul>
 						<li>{{ \Session::get('success') }}</li>
 					</ul>
@@ -60,13 +60,13 @@
 							<tr>
 								<td>{{ $count++ }}</td>
 								<td>{{ $row['title'] }}</td>
-								<td style="width: 15%;"><img src="{{ $row['thumbnail'] }}" class="img-responsive" alt="{{ $row['title'] }}" style="width: 100%;"></td>
+								<td style="width: 15%;"><img src="{{ $row['thumbnail'] }}" class="img-responsive img-thumbnail" alt="{{ $row['title'] }}" style="width: 100%;"></td>
 								<td>{{ $row['price'] }}</td>
 								<td>{{ $row['description'] }}</td>
 								<td>{{ $row['created_at'] }}</td>
 								<td>{{ $row['updated_at'] }}</td>
 								<td>
-									<form class="delete_form" action="{{ action('ProductController@destroy', $row['id']) }}" method="POST">
+									<form name="delete_form" action="{{ action('ProductController@destroy', $row['id']) }}" method="POST">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE">
 										<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>

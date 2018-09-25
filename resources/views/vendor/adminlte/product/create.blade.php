@@ -11,7 +11,7 @@
 	  		<div class="box-body">
 	  			@if(count($errors) > 0)
 	  				<div class="alert alert-danger">
-	  					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  					<button class="close" data-dismiss="alert" aria-label="close">&times;</button>
 	  					<ul>
 		  					@foreach($errors->all() as $error)
 		  						<li>{{ $error }}</li>
@@ -21,13 +21,13 @@
 	  			@endif
 	  			@if(\Session::has('success'))
 	  				<div class="alert alert-success">
-	  					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  					<button class="close" data-dismiss="alert" aria-label="close">&times;</button>
 	  					<ul>
 	  						<li>{{ \Session::get('success') }}</li>
 	  					</ul>
 	  				</div>
 	  			@endif
-	  			<form action="{{ url('product') }}" method="POST">
+	  			<form action="{{ url('product') }}" method="POST" enctype="multipart/form-data">
 	  				{{ csrf_field() }}
 	  				<div class="form-group">
 	  					<label for="title">Title</label>
@@ -35,7 +35,7 @@
 	  				</div>
 	  				<div class="form-group">
 	  					<label for="thumbnail">Thumbnail</label>
-	  					<input type="text" name="thumbnail" id="thumbnail" class="form-control">
+	  					<input type="file" name="thumbnail" id="thumbnail" class="form-control">
 	  				</div>
 	  				<div class="form-group">
 	  					<label for="price">Price</label>

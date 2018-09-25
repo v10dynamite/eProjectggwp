@@ -84,7 +84,7 @@
 		}).parentsUntil(".sidebar-menu > .treeview-menu").addClass('active');
 
 		//delete form confirmation from adminlte::product.index
-		$(".delete_form").submit(function () {
+		$("[name=delete_form]").submit(function () {
 			if (confirm('Confirm deletion?')) {
 				return true;
 			} else {

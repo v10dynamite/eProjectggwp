@@ -7,7 +7,7 @@
 			<div class="box-body">
 				@if(count($errors) > 0)
 	  				<div class="alert alert-danger">
-	  					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  					<button class="close" data-dismiss="alert" aria-label="close">&times;</button>
 	  					<ul>
 		  					@foreach($errors->all() as $error)
 		  						<li>{{ $error }}</li>
@@ -15,7 +15,7 @@
 	  					</ul>
 	  				</div>
 	  			@endif
-				<form action="{{ action('ProductController@update', $id) }}" method="POST">
+				<form action="{{ action('ProductController@update', $id) }}" method="POST" enctype="multipart/form-data">
 					{{ csrf_field() }}
 					<input type="hidden" name="_method" value="PATCH">
 					<div class="form-group">
@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group">
 						<label for="thumbnail">Thumbnail</label>
-						<input type="text" name="thumbnail" value="{{ $product->thumbnail }}" class="form-control">
+						<input type="file" name="thumbnail" value="{{ $product->thumbnail }}" class="form-control">
 					</div>
 					<div class="form-group">
 						<label for="price">Price</label>
