@@ -11,9 +11,7 @@
 			<li class="breadcrumb-item active">
 				@if(Request::is('home'))
 					Home
-				@elseif(Request::is('usersForm'))
-					Add Users
-				@elseif(Request::is('usersList'))
+				@elseif(Request::is('user'))
 					List Users
 				@elseif(Request::is('product/create'))
 					Add Product

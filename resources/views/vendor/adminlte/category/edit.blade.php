@@ -8,6 +8,7 @@
 				@if(count($errors) > 0)
 	  				<div class="alert alert-danger">
 	  					<button class="close" data-dismiss="alert" aria-label="close">&times;</button>
+	  					<strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
 	  					<ul>
 		  					@foreach($errors->all() as $error)
 		  						<li>{{ $error }}</li>
