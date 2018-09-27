@@ -1,10 +1,10 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	List of Products
+	List of Categories
 @endsection
 
-@section('productsList')
+@section('categoriesList')
 {{-- <div class="overlay">
     <i class="fa fa-refresh fa-spin"></i> //fontawesome test success, can put dis into class .box
 </div> --}}
@@ -13,7 +13,7 @@
 	<div class="box box-solid box-primary">
 		<div class="box-header with-border">
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-			<div class="box-title">List of Products</div>
+			<div class="box-title">List of Categories</div>
 		</div>
 		<div class="box-body">
 			@if(\Session::has('success'))
@@ -30,13 +30,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Category ID</th>
-							<th>Product ID</th>
-							<th>Title</th>
-							<th>Thumbnail</th>
-							<th>Quantity</th>
-							<th>Price</th>
-							<th>Description</th>
-							<th>Detail Description</th>
+							<th>Category Name</th>
 							<th>Created At</th>
 							<th>Updated At</th>
 							<th>Delete</th>
@@ -47,13 +41,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Category ID</th>
-							<th>Product ID</th>
-							<th>Title</th>
-							<th>Thumbnail</th>
-							<th>Quantity</th>
-							<th>Price</th>
-							<th>Description</th>
-							<th>Detail Description</th>
+							<th>Category Name</th>
 							<th>Created At</th>
 							<th>Updated At</th>
 							<th>Delete</th>
@@ -64,28 +52,22 @@
 						@php
 							$count = 1;
 						@endphp
-						@foreach($products as $row)
+						@foreach($categories as $row)
 							<tr>
 								<td>{{ $count++ }}</td>
 								<td>{{ $row['categoryid'] }}</td>
-								<td>{{ $row['productid'] }}</td>
-								<td>{{ $row['title'] }}</td>
-								<td style="width: 15%;"><img src="{{ $row['thumbnail'] }}" class="img-responsive img-thumbnail" alt="{{ $row['title'] }}" style="width: 100%;"></td>
-								<td>{{ $row['quantity'] }}</td>
-								<td>{{ $row['price'] }}</td>
-								<td>{{ $row['description'] }}</td>
-								<td>{{ $row['description_detail'] }}</td>
+								<td>{{ $row['categoryname'] }}</td>
 								<td>{{ $row['created_at'] }}</td>
 								<td>{{ $row['updated_at'] }}</td>
 								<td>
-									<form name="delete_form" action="{{ action('ProductController@destroy', $row['productid']) }}" method="POST">
+									<form name="delete_form" action="{{ action('CategoryController@destroy', $row['categoryid']) }}" method="POST">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE">
 										<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
 									</form>
 								</td> 
 								<td>
-									<a href="{{ action('ProductController@edit', $row['productid']) }}" class="btn btn-info">
+									<a href="{{ action('CategoryController@edit', $row['categoryid']) }}" class="btn btn-info">
 										<span class="glyphicon glyphicon-cog"></span>
 									</a>
 								</td>

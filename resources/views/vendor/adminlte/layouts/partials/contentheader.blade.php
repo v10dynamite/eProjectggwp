@@ -19,6 +19,10 @@
 					Add Product
 				@elseif(Request::is('product'))
 					List Products
+				@elseif(Request::is('category/create'))
+					Add Category
+				@elseif(Request::is('category'))
+					List Categories
 				@else
 					Updating...
 				@endif

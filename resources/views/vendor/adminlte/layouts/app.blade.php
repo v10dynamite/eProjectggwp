@@ -48,7 +48,10 @@ desired effect
             @yield('productsForm')
             @yield('productsList')
             @yield('productEdit')
-            @yield('ajaxall')
+            @yield('categoriesForm')
+            @yield('categoriesList')
+            @yield('categoryEdit')
+            {{-- @yield('ajaxall') --}}
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

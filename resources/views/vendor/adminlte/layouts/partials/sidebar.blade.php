@@ -24,10 +24,17 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.user') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('user/create') }}">{{ trans('adminlte_lang::message.adduser') }}</a></li>
+                    <li><a href="{{ url('user') }}">{{ trans('adminlte_lang::message.listuser') }}</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.category') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('categoryForm') }}">{{ trans('adminlte_lang::message.addcategory') }}</a></li>
-                    <li><a href="{{ url('categoryList') }}">{{ trans('adminlte_lang::message.listcategory') }}</a></li>
+                    <li><a href="{{ url('category/create') }}">{{ trans('adminlte_lang::message.addcategory') }}</a></li>
+                    <li><a href="{{ url('category') }}">{{ trans('adminlte_lang::message.listcategory') }}</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -37,7 +44,6 @@
                     <li><a href="{{ url('product') }}">{{ trans('adminlte_lang::message.listproduct') }}</a></li>
                 </ul>
             </li>
-            <li class="{{ Request::is('ajaxdata') ? "active" : "" }}"><a href="{{ url('ajaxdata') }}"><i class='fa fa-link'></i> <span>Product management by ajax</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

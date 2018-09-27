@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
     
 	Route::resource('product', 'ProductController');
+	Route::resource('category', 'CategoryController');
 
 	Route::get('/ajaxdata', [
 		'as' => 'ajaxdata',
