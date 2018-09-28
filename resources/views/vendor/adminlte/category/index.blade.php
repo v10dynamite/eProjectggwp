@@ -77,11 +77,11 @@
 				</table>
 			</div>
 		</div>
-		<div class="panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
+		<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
 	</div>
 
 	<p class="small text-center text-muted">
-		<em>More products coming soon...</em>
+		<em>More categories coming soon...</em>
 	</p>
 
 </div>

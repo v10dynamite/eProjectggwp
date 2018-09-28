@@ -30,6 +30,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Fullname</th>
+							<th>Email</th>
 							<th>Birthday</th>
 							<th>Gender</th>
 							<th>Address</th>
@@ -43,6 +44,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Fullname</th>
+							<th>Email</th>
 							<th>Birthday</th>
 							<th>Gender</th>
 							<th>Address</th>
@@ -63,6 +65,7 @@
 								<td>{{ $row['email'] }}</td>
 								<td>{{ $row['birthday'] }}</td>
 								<td>{{ $row['gender'] }}</td>
+								<td>{{ $row['address'] }}</td>
 								<td>{{ $row['created_at'] }}</td>
 								<td>{{ $row['updated_at'] }}</td>
 								<td>
@@ -83,7 +86,7 @@
 				</table>
 			</div>
 		</div>
-		<div class="panel-footer small text-muted">Updated yesterday at {{ $row['updated_at'] }}</div>
+		<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
 	</div>
 
 	<p class="small text-center text-muted">

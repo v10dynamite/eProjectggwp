@@ -17,7 +17,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all()->toArray();
-        return view('adminlte::product.index', compact('products'));
+        $latest_update = Product::latest('updated_at')->get();
+        return view('adminlte::product.index', compact('products', 'latest_update'));
     }
 
     /**
@@ -105,7 +106,7 @@ class ProductController extends Controller
     public function update(Request $request, $productid)
     {
         $this->validate($request, [
-            'productid' => 'required|unique:products',
+            'productid' => 'required',
             'title' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'quantity' => 'required',

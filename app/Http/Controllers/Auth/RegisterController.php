@@ -33,7 +33,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('adminlte::auth.register');
+        // return view('adminlte::auth.register');
+        return redirect('login');
     }
 
     /**
@@ -50,7 +51,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

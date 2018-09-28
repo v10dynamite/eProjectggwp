@@ -16,7 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all()->toArray();
-        return view('adminlte::category.index', compact('categories'));
+        $latest_update = Category::latest('updated_at')->get();
+        return view('adminlte::category.index', compact('categories', 'latest_update'));
     }
 
     /**
@@ -82,7 +83,7 @@ class CategoryController extends Controller
     public function update(Request $request, $categoryid)
     {
         $this->validate($request, [
-            'categoryid' => 'required|unique:categories',
+            'categoryid' => 'required',
             'categoryname' => 'required'
         ]);
         $category = Category::find($categoryid);

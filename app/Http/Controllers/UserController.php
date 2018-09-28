@@ -16,7 +16,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all()->toArray();
-        return view('adminlte::user.index', compact('users'));
+        $latest_update = User::latest('updated_at')->get();
+        return view('adminlte::user.index', compact('users', 'latest_update'));
     }
 
     /**
@@ -41,6 +42,9 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'birthday' => 'required',
+            'gender' => 'required',
+            'address' => 'required',
             'terms' => 'required',
         ]);
         $user = new User();
@@ -74,7 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('adminlte::user.edit', compact('user', 'id'));
     }
 
     /**
@@ -86,7 +91,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'birthday' => 'required',
+            'gender' => 'required',
+            'address' => 'required'
+        ]);
+        $user = User::find($id);
+        $input = $request->all();
+        $user->name = $input['name'];
+        $user->birthday = $input['birthday'];
+        $user->gender = $input['gender'];
+        $user->address = $input['address'];
+        $user->save();
+        return redirect()->route('user.index')->with('success', 'Admin Information Updated');
     }
 
     /**
@@ -97,6 +115,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'Admin Deleted');
     }
 }

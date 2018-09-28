@@ -47,6 +47,7 @@ desired effect
             @yield('main-content')
             @yield('usersForm')
             @yield('usersList')
+            @yield('userEdit')
             @yield('productsForm')
             @yield('productsList')
             @yield('productEdit')
