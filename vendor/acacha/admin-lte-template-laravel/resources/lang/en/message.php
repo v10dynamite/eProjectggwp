@@ -133,4 +133,5 @@ return [
     'retrypepassword'         => 'Retype password',
     'fullname'                => 'Full Name',
     'listproduct'             => 'List Products',
+    'feedback'                => 'Customer Feedback',
 ];

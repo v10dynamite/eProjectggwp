@@ -105,8 +105,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, $productid)
     {
+        $product = Product::find($productid);
+        $input = $request->all();
+        if ($product->productid != $input['productid']) {
+            $this->validate($request, [
+                'productid' => 'required|unique:products',
+                'title' => 'required',
+                'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'quantity' => 'required',
+                'price' => 'required',
+                'description' => 'required',
+                'description_detail' => 'required'
+            ]);
+        }
         $this->validate($request, [
-            'productid' => 'required',
             'title' => 'required',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'quantity' => 'required',
@@ -114,8 +126,6 @@ class ProductController extends Controller
             'description' => 'required',
             'description_detail' => 'required'
         ]);
-        $product = Product::find($productid);
-        $input = $request->all();
         if ($request->hasFile('thumbnail')) {
             $image = $request->file('thumbnail');
             $image->move(public_path('img'), $image->getClientOriginalName());

@@ -37,7 +37,8 @@
 					</div>
 					<div class="form-group">
 						<label for="thumbnail">Thumbnail</label>
-						<input type="file" name="thumbnail" value="{{ $product->thumbnail }}" class="form-control">
+						<input type="file" name="thumbnail" id="thumbnail" value="{{ $product->thumbnail }}" class="form-control">
+						<img id="thumbnail_show" src="{{ $product->thumbnail }}" alt="Thumbnail show after choose file" class="img-thumbnail img-responsive" width="300">
 					</div>
 					<div class="form-group">
 						<label for="quantity">Quantity</label>
@@ -53,7 +54,7 @@
 					</div>
 					<div class="form-group">
 						<label for="description_detail">Detail Description</label>
-						<input type="text" name="description_detail" value="{{ $product->description_detail }}" class="form-control">
+						<textarea name="description_detail" id="summernote">{{ $product->description_detail }}</textarea>
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Save" class="btn btn-success">

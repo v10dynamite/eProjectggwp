@@ -49,6 +49,7 @@
 	  				<div class="form-group">
 	  					<label for="thumbnail">Thumbnail</label>
 	  					<input type="file" name="thumbnail" id="thumbnail" class="form-control">
+	  					<img id="thumbnail_show" src="#" alt="Thumbnail show after choose file" class="img-thumbnail img-responsive" width="300">
 	  				</div>
 	  				<div class="form-group">
 	  					<label for="quantity">Quantity</label>
@@ -64,7 +65,7 @@
 	  				</div>
 	  				<div class="form-group">
 	  					<label for="description_detail">Detail Description</label>
-	  					<textarea name="description_detail" id="description_detail" class="form-control" placeholder="Write something here..." style="resize: vertical;height: 200px;"></textarea>
+	  					<textarea name="description_detail" id="summernote"></textarea>
 	  				</div>
 	  				<div class="form-group">
 	  					<input type="submit" value="Add" class="btn btn-success">

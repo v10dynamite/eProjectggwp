@@ -82,12 +82,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $categoryid)
     {
-        $this->validate($request, [
-            'categoryid' => 'required',
-            'categoryname' => 'required'
-        ]);
         $category = Category::find($categoryid);
         $input = $request->all();
+        if ($category->categoryid != $input['categoryid']) {
+            $this->validate($request, [
+                'categoryid' => 'required|unique:categories',
+                'categoryname' => 'required'
+            ]);
+        }
+        $this->validate($request, [
+            'categoryname' => 'required'
+        ]);
         $category->categoryid = $input['categoryid'];
         $category->categoryname = $input['categoryname'];
         $category->save();

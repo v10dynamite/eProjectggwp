@@ -22,9 +22,10 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Request::is('home') ? "active" : "" }}"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="{{ Request::is('feedback') ? "active" : "" }}"><a href="{{ url('feedback') }}"><i class='fa fa-envelope'></i> <span>{{ trans('adminlte_lang::message.feedback') }}</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.user') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-user'></i> <span>{{ trans('adminlte_lang::message.user') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('user/create') }}">{{ trans('adminlte_lang::message.adduser') }}</a></li>
                     <li><a href="{{ url('user') }}">{{ trans('adminlte_lang::message.listuser') }}</a></li>

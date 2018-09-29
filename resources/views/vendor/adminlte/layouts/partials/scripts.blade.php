@@ -5,10 +5,29 @@
 <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/summernote/summernote.js') }}"></script>
 <script type="text/javascript">
+	//thumbnail show after choose file
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#thumbnail_show').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#thumbnail").change(function(){
+		readURL(this);
+	});
+	//END thumbnail show after choose file
+
 	$(document).ready(function() {
 		//from ajaxdata.blade.php
-		$('#myTable').DataTable(//{
+		$('[name=myTable]').DataTable(//{
 			// "processing": true,
 			// "serverSide": true,
 			// "ajax": "{! route('ajaxdata.getdata') !!}",
@@ -71,6 +90,12 @@
 		// 	})
 		// });
 		//END AJAX INSERT
+
+		//Run summernote
+		$('#summernote').summernote({
+			placeholder: 'Write something here...',
+			height: 200
+		});
 
 		/** add active class and stay opened when selected */
 		var url = window.location;

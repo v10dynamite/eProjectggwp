@@ -8,6 +8,8 @@
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet" type="text/css" />
     <link rel="icon" href="{!! asset('img/HomerSimpson.png') !!}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/datatables/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/plugins/fontawesome-free-5.3.1-web/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/plugins/summernote/summernote.css') }}">
     <style type="text/css">
         label {
             font-weight: bold;
