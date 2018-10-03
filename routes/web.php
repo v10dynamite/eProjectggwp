@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Send email route
+Route::post('/sendemail', 'SendEmailController@send');
 
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
