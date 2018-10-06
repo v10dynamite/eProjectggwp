@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Category;
 use App\Product;
 
@@ -154,5 +155,52 @@ class ProductController extends Controller
         $product = Product::find($productid);
         $product->delete();
         return redirect()->route('product.index')->with('success', 'Data Removed');
+    }
+
+    //For displaying data to frontend store
+    public function thoitrangcongsoall(Request $request)
+    {
+        // $products = Product::paginate(8);
+        // $products = Category::where('categorygroup_id', '=', 'CG1')->get();
+        $array = DB::table('products')
+                    ->join('categories','products.categoryid','=','categories.categoryid')
+                    ->where('categorygroup_id', '=', 'CG1')
+                    ->get();
+        $products = [];
+        foreach ( $array as $obj) {
+            $products[] = (array)$obj;
+        }
+        // $products = $array->toArray();
+        // var_dump( $products);
+        // die();
+        return view('adminlte::frontendstore.thoitrangcongso',['products'=>$products]);
+    }
+
+    public function thoitrangtreall(Request $request)
+    {
+        $array = DB::table('products')
+                    ->join('categories','products.categoryid','=','categories.categoryid')
+                    ->where('categorygroup_id', '=', 'CG2')
+                    ->get();
+        $products = [];
+        foreach ( $array as $obj) {
+            $products[] = (array)$obj;
+        }
+        // $products = Product::paginate(8);
+        return view('adminlte::frontendstore.thoitrangtre', compact('products'));
+    }
+
+    public function mevabeall(Request $request)
+    {
+        $array = DB::table('products')
+                    ->join('categories','products.categoryid','=','categories.categoryid')
+                    ->where('categorygroup_id', '=', 'CG3')
+                    ->get();
+        $products = [];
+        foreach ( $array as $obj) {
+            $products[] = (array)$obj;
+        }
+        // $products = Product::paginate(8);
+        return view('adminlte::frontendstore.mevabe', compact('products'));
     }
 }

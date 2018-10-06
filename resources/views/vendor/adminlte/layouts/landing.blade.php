@@ -25,7 +25,9 @@
         ==================================== -->
         
         @yield('home-content')
-        @yield('store-content')
+        @yield('thoitrangcongso')
+        @yield('thoitrangtre')
+        @yield('mevabe')
         
         @include('adminlte::layouts.partialsfrontend.footer')
             

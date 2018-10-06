@@ -2,12 +2,12 @@
 
 
 @section('htmlheader_title')
-{{ trans('adminlte_lang::message.thoitrangcongso') }}
+{{ trans('adminlte_lang::message.mevabe') }}
 @endsection
 
 
 
-@section('thoitrangcongso')
+@section('mevabe')
 
 <div class="parallax">
 	<div class="container-fluid">
@@ -25,7 +25,7 @@
 		<div class="container-fluid">
 			<div class="row content">
 				<div class="col-sm-3 sidenav">
-					<h4 style="margin-bottom: 10px;">THỜI TRANG <span style="color: #E48F21;">CÔNG SỞ</span></h4>
+					<h4 style="margin-bottom: 10px;">MẸ VÀ <span style="color: #E48F21;">BÉ</span></h4>
 					<ul class="nav nav-pills nav-stacked">
 						<li class="active"><a href="">TẤT CẢ</a></li>
 						<li><a href="#">ĐẦM NỮ</a></li>
@@ -40,20 +40,20 @@
 					<p>
 						<div class="panel panel-default" style="margin-top: 15px;">
 							<div class="panel-heading">
-								<h3>THỜI TRANG CÔNG SỞ</h3>
+								<h3>MẸ VÀ BÉ</h3>
 							</div>
 						</div> <hr>
 						<div class="panel panel-default" style="margin-top: 15px;">
 							<div class="panel-heading">
 								<h4>Hiện có <span style="color: red;">
 									@php 
-										$count = 0;
 										if (!empty($products)) {
+											$count = 0;
 											foreach ($products as $row) {
 												$count++;
 											}
+											echo $count;
 										}
-										echo $count;
 									@endphp</span> sản phẩm</h4>
 							</div>
 						</div>
@@ -74,12 +74,13 @@
 								</figure>
 							@endforeach
 						@endif
-
 					</div>
 					<center>
-						{{-- @if(!empty($products))
-							{!! $products->links() !!}
-						@endif --}}
+						@if(isset($categorygroup)) {{-- IF isset value categorygroup == 'CG1' then do this --}}
+							@if(!empty($products))
+								{!! $products->links() !!}
+							@endif
+						@endif
 					</center>
 				</div>
 			</div>

@@ -15,9 +15,20 @@ Route::get('/', function () {
     return view('adminlte::homefrontend');
 })->name('/');
 
-Route::get('/thoitrangcongso', function () {
-    return view('adminlte::frontendstore.thoitrangcongso');
-})->name('thoitrangcongso');
+Route::get('/thoitrangcongso', [
+	'as' => 'thoitrangcongso',
+	'uses' => 'ProductController@thoitrangcongsoall'
+]);
+
+Route::get('/thoitrangtre', [
+	'as' => 'thoitrangtre',
+	'uses' => 'ProductController@thoitrangtreall'
+]);
+
+Route::get('/mevabe', [
+	'as' => 'mevabe',
+	'uses' => 'ProductController@mevabeall'
+]);
 
 //Send email route
 Route::post('/sendemail', 'SendEmailController@send');

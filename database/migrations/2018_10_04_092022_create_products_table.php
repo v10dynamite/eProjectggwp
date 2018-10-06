@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->string('price');
             $table->string('description');
-            $table->string('description_detail',1000);
+            $table->string('description_detail',10000);
             $table->timestamps();
             $table->foreign('categoryid')->references('categoryid')->on('categories')->onDelete('cascade')->onUpdate('cascade');
         });
