@@ -31,6 +31,14 @@
 	  			<form action="{{ url('category') }}" method="POST">
 	  				{{ csrf_field() }}
 	  				<div class="form-group">
+	  					<label for="categorygroup_id">Category Group ID</label>
+	  					<select name="categorygroup_id" id="categorygroup_id" class="form-control">
+	  						<option value="CG1">CG1</option>
+	  						<option value="CG2">CG2</option>
+	  						<option value="CG3">CG3</option>
+	  					</select>
+	  				</div>
+	  				<div class="form-group">
 	  					<label for="categoryid">Category ID</label>
 	  					<input type="text" name="categoryid" id="categoryid" class="form-control">
 	  				</div>

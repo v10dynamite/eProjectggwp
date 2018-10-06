@@ -53,6 +53,7 @@ return [
     'seecode'                 => 'See code at',
     'online'                  => 'Online',
     'home'                    => 'Home',
+    'homefrontend'            => 'Crystal Boutique - Home',
     'header'                  => 'MANAGEMENT SECTION',
     'product'                 => 'Product',
     'addproduct'              => 'Add Product',

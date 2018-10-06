@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('adminlte::homefrontend');
+})->name('/');
+
+Route::get('/thoitrangcongso', function () {
+    return view('adminlte::frontendstore.thoitrangcongso');
+})->name('thoitrangcongso');
 
 //Send email route
 Route::post('/sendemail', 'SendEmailController@send');

@@ -20,6 +20,18 @@
 					{{ csrf_field() }}
 					<input type="hidden" name="_method" value="PATCH">
 					<div class="form-group">
+	  					<label for="categorygroup_id">Category Group ID</label>
+	  					<select name="categorygroup_id" id="categorygroup_id" class="form-control">
+	  						{{-- Because of $categorygroup is an json string so we have to use those php code --}}
+	  						@php
+	  							$result = json_decode($categorygroup, true); //Move from json or object to an array
+	  						@endphp
+	  						@foreach($result as $row)
+	  							<option @if($row['categorygroup_id'] == $category->categorygroup_id) selected @endif value="{{ $row['categorygroup_id'] }}">{{ $row['categorygroup_id'] }}</option>
+	  						@endforeach
+	  					</select>
+	  				</div>
+					<div class="form-group">
 						<label for="categoryid">Category ID</label>
 						<input type="text" name="categoryid" value="{{ $category->categoryid }}" class="form-control">
 					</div>

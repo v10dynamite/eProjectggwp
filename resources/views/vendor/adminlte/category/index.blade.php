@@ -29,6 +29,7 @@
 					<thead>
 						<tr>
 							<th>ID</th>
+							<th>Category Group ID</th>
 							<th>Category ID</th>
 							<th>Category Name</th>
 							<th>Created At</th>
@@ -40,6 +41,7 @@
 					<tfoot>
 						<tr>
 							<th>ID</th>
+							<th>Category Group ID</th>
 							<th>Category ID</th>
 							<th>Category Name</th>
 							<th>Created At</th>
@@ -55,6 +57,7 @@
 						@foreach($categories as $row)
 							<tr>
 								<td>{{ $count++ }}</td>
+								<td>{{ $row['categorygroup_id'] }}</td>
 								<td>{{ $row['categoryid'] }}</td>
 								<td>{{ $row['categoryname'] }}</td>
 								<td>{{ $row['created_at'] }}</td>

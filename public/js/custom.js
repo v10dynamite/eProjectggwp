@@ -11,6 +11,13 @@ jQuery(window).load(function(){
 
 $(document).ready(function(){
 
+    /* ========================================================================= */
+	/*	Fix link nav top
+	/* ========================================================================= */
+    $('.linkfix_LogIn a').on('click',function() {           
+        window.location.href = "http://localhost/eproject/public/";
+    });
+
 	/* ========================================================================= */
 	/*	Menu item highlighting
 	/* ========================================================================= */
@@ -193,36 +200,19 @@ $('#contact-form').validate({
 });
 
 
-/*
+
 // ==========  START GOOGLE MAP ========== //
-function initialize() {
-    var myLatLng = new google.maps.LatLng(10.799815, 106.710938);
+function initMap() {
+	var location ={lat: 21.035000, lng: 105.826950};
+	var map = new google.maps.Map(document.getElementById("map"), {
+		zoom: 15,
+		center: location
+	});
 
-    var mapOptions = {
-        zoom: 14,
-        center: myLatLng,
-        disableDefaultUI: true,
-        scrollwheel: false,
-        navigationControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        draggable: false,
-        mapTypeControlOptions: {
-            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
-        }
-    };
-
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: 'img/location-icon.png',
-        title: '',
-    });
-
+	var marker = new google.maps.Marker({
+		position: location, 
+		map: map
+	});
 }
 
-google.maps.event.addDomListener(window, "load", initialize);
-// ========== END GOOGLE MAP ========== //*/
+// ========== END GOOGLE MAP ========== //

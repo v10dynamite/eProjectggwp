@@ -43,7 +43,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.myweb') }}</a>
+                                    <a href="{{ url('/') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.myweb') }}</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat"

@@ -617,7 +617,7 @@ img.gamelist{
 /*=========================================
  New Game
 ==========================================*/
-#newgame{
+#sales{
   padding: 0;
 }
 .newgamecontent{
@@ -933,7 +933,7 @@ label.error {
 }
 
 .copyright {
-  color: #fff;
+  color: #FA9C15;
   margin-top: 100px;
 }
 

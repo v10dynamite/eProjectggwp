@@ -93,7 +93,11 @@
 				</table>
 			</div>
 		</div>
-		<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
+		@if(count($latest_update)>0)
+			<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
+		@else
+			<div class="panel-footer small text-muted">Last updated at</div>
+		@endif
 	</div> {{-- END product short information --}}
 
 	{{-- product with description_detail --}}	
@@ -152,7 +156,11 @@
 				</table>
 			</div>
 		</div>
-		<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
+		@if(count($latest_update)>0)
+			<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
+		@else
+			<div class="panel-footer small text-muted">Last updated at</div>
+		@endif
 	</div> {{-- END product with description_detail --}}
 
 	<p class="small text-center text-muted">

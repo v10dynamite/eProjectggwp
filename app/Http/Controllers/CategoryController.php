@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -44,6 +45,7 @@ class CategoryController extends Controller
         ]);
         $category = new Category();
         $input = $request->all();
+        $category->categorygroup_id = $input['categorygroup_id'];
         $category->categoryid = $input['categoryid'];
         $category->categoryname = $input['categoryname'];
         $category->save();
@@ -70,7 +72,8 @@ class CategoryController extends Controller
     public function edit($categoryid)
     {
         $category = Category::find($categoryid);
-        return view('adminlte::category.edit', compact('category', 'categoryid'));
+        $categorygroup = DB::table('categoriesgroup')->select('categorygroup_id')->get();
+        return view('adminlte::category.edit', compact('category', 'categoryid', 'categorygroup'))->with('categorygroup_id');
     }
 
     /**
@@ -93,6 +96,7 @@ class CategoryController extends Controller
         $this->validate($request, [
             'categoryname' => 'required'
         ]);
+        $category->categorygroup_id = $input['categorygroup_id'];
         $category->categoryid = $input['categoryid'];
         $category->categoryname = $input['categoryname'];
         $category->save();
