@@ -23,11 +23,33 @@
         <!--
         Home Slider
         ==================================== -->
-        
+
+        {{-- Home Page --}}
         @yield('home-content')
+
+        {{-- Thoi trang cong so page --}}
         @yield('thoitrangcongso')
+        @yield('thoitrangcongso-damnu')
+        @yield('thoitrangcongso-aonu')
+        @yield('thoitrangcongso-quannu')
+        @yield('thoitrangcongso-chanvay')
+        @yield('thoitrangcongso-bolien')
+
+        {{-- Thoi trang cong so page --}}
         @yield('thoitrangtre')
+        @yield('thoitrangtre-damnu')
+        @yield('thoitrangtre-aonu')
+        @yield('thoitrangtre-quannu')
+        @yield('thoitrangtre-chanvay')
+        @yield('thoitrangtre-bolien')
+
+
+        {{-- Thoi trang cong so page --}}
         @yield('mevabe')
+        @yield('mevabe-me')
+        @yield('mevabe-be')
+
+
         
         @include('adminlte::layouts.partialsfrontend.footer')
             

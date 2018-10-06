@@ -18,7 +18,7 @@
     <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <ul id="nav" class="nav navbar-nav">
             @if(Request::is('/'))
-                <li><a href="#body" class="current">HOME</a></li>
+                <li class="menu-active"><a href="#body" class="current">HOME</a></li>
                 <li><a href="#features">INTRODUCTION</a></li>
                 <li><a href="#works">GALLERY</a></li>
                 <li><a href="#sales">SALES PROMOTION</a></li>

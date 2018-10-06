@@ -27,12 +27,12 @@
 				<div class="col-sm-3 sidenav">
 					<h4 style="margin-bottom: 10px;">THỜI TRANG <span style="color: #E48F21;">CÔNG SỞ</span></h4>
 					<ul class="nav nav-pills nav-stacked">
-						<li class="active"><a href="">TẤT CẢ</a></li>
-						<li><a href="#">ĐẦM NỮ</a></li>
-						<li><a href="#">ÁO NỮ</a></li>
-						<li><a href="#">QUẦN NỮ</a></li>
-						<li><a href="#">CHÂN VÁY</a></li>
-						<li><a href="#">BỘ LIỀN</a></li>
+						<li class="active"><a href="{{ route('thoitrangcongso') }}">TẤT CẢ</a></li>
+						<li><a href="{{ route('thoitrangcongsodamnu') }}">ĐẦM NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsoaonu') }}">ÁO NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsoquannu') }}">QUẦN NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsochanvay') }}">CHÂN VÁY</a></li>
+						<li><a href="{{ route('thoitrangcongsobolien') }}">BỘ LIỀN</a></li>
 					</ul>
 				</div>
 
@@ -61,15 +61,15 @@
 					<br>
 					<div class="project-wrapper col-sm-12">
 						@if(!empty($products))
-							@foreach($products as $row)
+							@foreach($products as $product)
 								<figure class="mix work-item action multiplayer">
-									<div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row['thumbnail'] }}" alt="{{ $row['title'] }}" class="gamelist"></div>
+									<div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="gamelist"></div>
 									<figcaption class="overlay simpleCart_shelfItem">
 										<a class="gamedetail"  title="Detail" href="#">Chi Tiết</a>
-										<h4>Mã: {{ $row['productid'] }}</h4>
-										<p>{{ $row['description'] }}</p>
-										<div class="pricelist"><span id="price">${{ $row['price'] }}</span><img src="img/icon-windown.png" alt=""> <img src="img/icon-apple.png" alt=""> <img src="img/icon-xbox_0.png" alt=""></div>
-										<a class="item_add" href="#"><span class="item_price" style="display: none;">${{ $row['price'] }}</span><button id="addtocart">Giỏ hàng </button></a>
+										<h4>Mã: {{ $product->productid }}</h4>
+										<p>{{ $product->description }}</p>
+										<div class="pricelist"><span id="price">${{ $product->price }}</span><img src="img/icon-windown.png" alt=""> <img src="img/icon-apple.png" alt=""> <img src="img/icon-xbox_0.png" alt=""></div>
+										<a class="item_add" href="#"><span class="item_price" style="display: none;">${{ $product->price }}</span><button id="addtocart">Giỏ hàng </button></a>
 									</figcaption>
 								</figure>
 							@endforeach
@@ -77,9 +77,9 @@
 
 					</div>
 					<center>
-						{{-- @if(!empty($products))
-							{!! $products->links() !!}
-						@endif --}}
+						@if(!empty($products))
+							{{ $products->links() }}
+						@endif
 					</center>
 				</div>
 			</div>

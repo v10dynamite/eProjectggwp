@@ -15,20 +15,114 @@ Route::get('/', function () {
     return view('adminlte::homefrontend');
 })->name('/');
 
-Route::get('/thoitrangcongso', [
-	'as' => 'thoitrangcongso',
-	'uses' => 'ProductController@thoitrangcongsoall'
-]);
+//Route THOI TRANG CONG SO
 
-Route::get('/thoitrangtre', [
-	'as' => 'thoitrangtre',
-	'uses' => 'ProductController@thoitrangtreall'
-]);
+Route::group(['prefix' => '/thoitrangcongso'], function() {
+	//All thoitrangcongso products
+	Route::get('/', [
+		'as' => 'thoitrangcongso',
+		'uses' => 'ProductController@thoitrangcongsoall'
+	]);
 
-Route::get('/mevabe', [
-	'as' => 'mevabe',
-	'uses' => 'ProductController@mevabeall'
-]);
+	//thoitrangcongso - damnu products
+	Route::get('/damnu', [
+		'as' => 'thoitrangcongsodamnu',
+		'uses' => 'ProductController@thoitrangcongsodamnu'
+	]);
+
+	//thoitrangcongso - aonu products
+	Route::get('/aonu', [
+		'as' => 'thoitrangcongsoaonu',
+		'uses' => 'ProductController@thoitrangcongsoaonu'
+	]);
+
+	//thoitrangcongso - quannu products
+	Route::get('/quannu', [
+		'as' => 'thoitrangcongsoquannu',
+		'uses' => 'ProductController@thoitrangcongsoquannu'
+	]);
+
+	//thoitrangcongso - chanvay products
+	Route::get('/chanvay', [
+		'as' => 'thoitrangcongsochanvay',
+		'uses' => 'ProductController@thoitrangcongsochanvay'
+	]);
+
+	//thoitrangcongso - bolien products
+	Route::get('/bolien', [
+		'as' => 'thoitrangcongsobolien',
+		'uses' => 'ProductController@thoitrangcongsobolien'
+	]);
+
+});
+//END Route THOI TRANG CONG SO
+
+
+//Route THOI TRANG TRE
+Route::group(['prefix' => '/thoitrangtre'], function() {
+	//All thoitrangtre products
+	Route::get('/', [
+		'as' => 'thoitrangtre',
+		'uses' => 'ProductController@thoitrangtreall'
+	]);
+
+	//thoitrangtre - damnu products
+	Route::get('/damnu', [
+		'as' => 'thoitrangtredamnu',
+		'uses' => 'ProductController@thoitrangtredamnu'
+	]);
+
+	//thoitrangtre - aonu products
+	Route::get('/aonu', [
+		'as' => 'thoitrangtreaonu',
+		'uses' => 'ProductController@thoitrangtreaonu'
+	]);
+
+	//thoitrangtre - quannu products
+	Route::get('/quannu', [
+		'as' => 'thoitrangtrequannu',
+		'uses' => 'ProductController@thoitrangtrequannu'
+	]);
+
+	//thoitrangtre - chanvay products
+	Route::get('/chanvay', [
+		'as' => 'thoitrangtrechanvay',
+		'uses' => 'ProductController@thoitrangtrechanvay'
+	]);
+
+	//thoitrangtre - bolien products
+	Route::get('/bolien', [
+		'as' => 'thoitrangtrebolien',
+		'uses' => 'ProductController@thoitrangtrebolien'
+	]);
+
+});
+//END Route THOI TRANG TRE
+
+
+//Route ME VA BE
+Route::group(['prefix' => '/mevabe'], function() {
+	//All mevabe products
+	Route::get('/', [
+		'as' => 'mevabe',
+		'uses' => 'ProductController@mevabeall'
+	]);
+
+	//mevabe - me products
+	Route::get('/me', [
+		'as' => 'mevabeme',
+		'uses' => 'ProductController@mevabeme'
+	]);
+
+	//mevabe - be products
+	Route::get('/be', [
+		'as' => 'mevabebe',
+		'uses' => 'ProductController@mevabebe'
+	]);
+
+});
+//END Route ME VA BE
+
 
 //Send email route
 Route::post('/sendemail', 'SendEmailController@send');

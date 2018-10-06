@@ -27,9 +27,7 @@
     	<!-- animate -->
     	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
         <!-- Frontend Store Stylesheet -->
-        @if(url('/thoitrangcongso'))
         <link rel="stylesheet" type="text/css" href="{{ asset('css/frontendstore.css') }}">
-        @endif
     	<!-- Main Stylesheet -->
     	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     	<!-- media-queries -->

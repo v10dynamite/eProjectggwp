@@ -156,51 +156,157 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index')->with('success', 'Data Removed');
     }
+    //END admin product management (route resource)
 
-    //For displaying data to frontend store
+
+//---------------------------------------------------------------------------------------//
+
+
+    //Handling data from thoi trang cong so
     public function thoitrangcongsoall(Request $request)
     {
-        // $products = Product::paginate(8);
-        // $products = Category::where('categorygroup_id', '=', 'CG1')->get();
-        $array = DB::table('products')
+        $products = DB::table('products')
                     ->join('categories','products.categoryid','=','categories.categoryid')
                     ->where('categorygroup_id', '=', 'CG1')
-                    ->get();
-        $products = [];
-        foreach ( $array as $obj) {
-            $products[] = (array)$obj;
-        }
-        // $products = $array->toArray();
-        // var_dump( $products);
-        // die();
-        return view('adminlte::frontendstore.thoitrangcongso',['products'=>$products]);
+                    ->paginate(8);
+
+        return view('adminlte::frontendstore.thoitrangcongso', compact('products'));
     }
+
+    public function thoitrangcongsodamnu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C01')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangcongso.damnu', compact('products'));
+    }
+
+    public function thoitrangcongsoaonu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C02')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangcongso.aonu', compact('products'));
+    }
+
+    public function thoitrangcongsoquannu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C03')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangcongso.quannu', compact('products'));
+    }
+
+    public function thoitrangcongsochanvay(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C04')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangcongso.chanvay', compact('products'));
+    }
+
+    public function thoitrangcongsobolien(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C05')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangcongso.bolien', compact('products'));
+    }
+    //END Handling data from thoi trang cong so
+
+
+//---------------------------------------------------------------------------------------//
+    //Handling data from thoi trang tre
 
     public function thoitrangtreall(Request $request)
     {
-        $array = DB::table('products')
+        $products = DB::table('products')
                     ->join('categories','products.categoryid','=','categories.categoryid')
                     ->where('categorygroup_id', '=', 'CG2')
-                    ->get();
-        $products = [];
-        foreach ( $array as $obj) {
-            $products[] = (array)$obj;
-        }
-        // $products = Product::paginate(8);
+                    ->paginate(8);
+        
         return view('adminlte::frontendstore.thoitrangtre', compact('products'));
     }
 
+    public function thoitrangtredamnu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C06')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangtre.damnu', compact('products'));
+    }
+
+    public function thoitrangtreaonu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C07')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangtre.aonu', compact('products'));
+    }
+
+    public function thoitrangtrequannu(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C08')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangtre.quannu', compact('products'));
+    }
+
+    public function thoitrangtrechanvay(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C09')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangtre.chanvay', compact('products'));
+    }
+
+    public function thoitrangtrebolien(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C10')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.thoitrangtre.bolien', compact('products'));
+    }
+
+    //END Handling data from thoi trang tre
+
+//---------------------------------------------------------------------------------------//
+    //Handling data from me va be
     public function mevabeall(Request $request)
     {
-        $array = DB::table('products')
+        $products = DB::table('products')
                     ->join('categories','products.categoryid','=','categories.categoryid')
                     ->where('categorygroup_id', '=', 'CG3')
-                    ->get();
-        $products = [];
-        foreach ( $array as $obj) {
-            $products[] = (array)$obj;
-        }
-        // $products = Product::paginate(8);
+                    ->paginate(8);
+        
         return view('adminlte::frontendstore.mevabe', compact('products'));
+    }
+
+    public function mevabeme(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C11')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.mevabe.me', compact('products'));
+    }
+
+    public function mevabebe(Request $request)
+    {
+        $products = DB::table('products')
+                    ->where('categoryid', '=', 'C12')
+                    ->paginate(8);
+
+        return view('adminlte::frontendsubmenu.mevabe.be', compact('products'));
     }
 }

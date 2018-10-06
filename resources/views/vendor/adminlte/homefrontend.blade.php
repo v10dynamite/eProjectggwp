@@ -8,7 +8,7 @@
 
 @section('home-content')
 
-<section id="slider">
+<section style="min-height: 80vh;" id="slider">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators bullet -->
@@ -435,7 +435,7 @@
         ==================================== -->        
         
         <section id="facts" class="facts">
-            <div class="parallax-overlay">
+            <div style="min-height: 100vh;" class="parallax-overlay">
                 <div class="container">
                     <div class="row number-counters">
 

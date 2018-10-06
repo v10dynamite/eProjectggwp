@@ -2,12 +2,12 @@
 
 
 @section('htmlheader_title')
-{{ trans('adminlte_lang::message.mevabe') }}
+{{ trans('adminlte_lang::message.thoitrangcongso-damnu') }}
 @endsection
 
 
 
-@section('mevabe')
+@section('thoitrangcongso-damnu')
 
 <div class="parallax">
 	<div class="container-fluid">
@@ -25,11 +25,14 @@
 		<div class="container-fluid">
 			<div class="row content">
 				<div class="col-sm-3 sidenav">
-					<h4 style="margin-bottom: 10px;">MẸ VÀ <span style="color: #E48F21;">BÉ</span></h4>
+					<h4 style="margin-bottom: 10px;">THỜI TRANG <span style="color: #E48F21;">CÔNG SỞ</span></h4>
 					<ul class="nav nav-pills nav-stacked">
-						<li class="active"><a href="{{ route('mevabe') }}">TẤT CẢ</a></li>
-						<li><a href="{{ route('mevabeme') }}">SẢN PHẨM MẸ</a></li>
-						<li><a href="{{ route('mevabebe') }}">SẢN PHẨM BÉ</a></li>
+						<li><a href="{{ route('thoitrangcongso') }}">TẤT CẢ</a></li>
+						<li><a href="{{ route('thoitrangcongsodamnu') }}">ĐẦM NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsoaonu') }}">ÁO NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsoquannu') }}">QUẦN NỮ</a></li>
+						<li><a href="{{ route('thoitrangcongsochanvay') }}">CHÂN VÁY</a></li>
+						<li class="active"><a href="{{ route('thoitrangcongsobolien') }}">BỘ LIỀN</a></li>
 					</ul>
 				</div>
 
@@ -37,7 +40,7 @@
 					<p>
 						<div class="panel panel-default" style="margin-top: 15px;">
 							<div class="panel-heading">
-								<h3>MẸ VÀ BÉ</h3>
+								<h3>THỜI TRANG CÔNG SỞ</h3>
 							</div>
 						</div> <hr>
 						<div class="panel panel-default" style="margin-top: 15px;">
@@ -71,10 +74,11 @@
 								</figure>
 							@endforeach
 						@endif
+
 					</div>
 					<center>
 						@if(!empty($products))
-							{!! $products->links() !!}
+							{{ $products->links() }}
 						@endif
 					</center>
 				</div>

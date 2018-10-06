@@ -2,12 +2,12 @@
 
 
 @section('htmlheader_title')
-{{ trans('adminlte_lang::message.mevabe') }}
+{{ trans('adminlte_lang::message.mevabe-me') }}
 @endsection
 
 
 
-@section('mevabe')
+@section('mevabe-me')
 
 <div class="parallax">
 	<div class="container-fluid">
@@ -27,8 +27,8 @@
 				<div class="col-sm-3 sidenav">
 					<h4 style="margin-bottom: 10px;">MẸ VÀ <span style="color: #E48F21;">BÉ</span></h4>
 					<ul class="nav nav-pills nav-stacked">
-						<li class="active"><a href="{{ route('mevabe') }}">TẤT CẢ</a></li>
-						<li><a href="{{ route('mevabeme') }}">SẢN PHẨM MẸ</a></li>
+						<li><a href="{{ route('mevabe') }}">TẤT CẢ</a></li>
+						<li class="active"><a href="{{ route('mevabeme') }}">SẢN PHẨM MẸ</a></li>
 						<li><a href="{{ route('mevabebe') }}">SẢN PHẨM BÉ</a></li>
 					</ul>
 				</div>
@@ -71,10 +71,11 @@
 								</figure>
 							@endforeach
 						@endif
+
 					</div>
 					<center>
 						@if(!empty($products))
-							{!! $products->links() !!}
+							{{ $products->links() }}
 						@endif
 					</center>
 				</div>
