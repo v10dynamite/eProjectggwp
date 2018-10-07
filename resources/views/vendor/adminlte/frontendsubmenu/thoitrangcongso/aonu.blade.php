@@ -38,11 +38,12 @@
 
 				<div class="col-sm-9">
 					<p>
-						<div class="panel panel-default" style="margin-top: 15px;">
-							<div class="panel-heading">
-								<h3>THỜI TRANG CÔNG SỞ</h3>
-							</div>
-						</div> <hr>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Áo nữ</li>
+							</ol>
+						</nav> <hr>
 						<div class="panel panel-default" style="margin-top: 15px;">
 							<div class="panel-heading">
 								<h4>Hiện có <span style="color: red;">

@@ -35,11 +35,12 @@
 
 				<div class="col-sm-9">
 					<p>
-						<div class="panel panel-default" style="margin-top: 15px;">
-							<div class="panel-heading">
-								<h3>MẸ VÀ BÉ</h3>
-							</div>
-						</div> <hr>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Sản phẩm Mẹ</li>
+							</ol>
+						</nav> <hr>
 						<div class="panel panel-default" style="margin-top: 15px;">
 							<div class="panel-heading">
 								<h4>Hiện có <span style="color: red;">

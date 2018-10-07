@@ -12,7 +12,7 @@
 				@if(Request::is('home'))
 					Home
 				@elseif(Request::is('user'))
-					List Users
+					List Admins
 				@elseif(Request::is('product/create'))
 					Add Product
 				@elseif(Request::is('product'))
