@@ -8,7 +8,7 @@ jQuery(window).load(function(){
 
 });
 
-
+var dataList = [];
 $(document).ready(function(){
 
     /* ========================================================================= */
@@ -136,6 +136,20 @@ $(document).ready(function(){
             scrollTop: 0
         }, 1500, "easeInOutExpo")
     });
+
+
+
+    /* ========================================================================= */
+	/*	Localstorage add to cart at view adminlte::frontenddetail.detail
+	/* ========================================================================= */
+
+	// $('#btnAddtocart').click(function () {
+	// 	var obj = {
+			
+	// 	}
+	// });
+
+
 	
 });
 
@@ -177,26 +191,6 @@ $('#contact-form').validate({
 			minlength: "."
 		}
 	},
-/*					submitHandler: function(form) {
-		$(form).ajaxSubmit({Ư
-			type:"POST",
-			data: $(form).serialize(),
-			url:"process.php",
-			success: function() {
-				$('#contact-form :input').attr('disabled', 'disabled');
-				$('#contact-form').fadeTo( "slow", 0.15, function() {
-					$(this).find(':input').attr('disabled', 'disabled');
-					$(this).find('label').css('cursor','default');
-					$('#success').fadeIn();
-				});
-			},
-			error: function() {
-				$('#contact-form').fadeTo( "slow", 0.15, function() {
-					$('#error').fadeIn();
-				});
-			}
-		});
-	}*/
 });
 
 

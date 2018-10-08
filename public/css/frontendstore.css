@@ -27,12 +27,12 @@
 	padding: 15px;
 }
 @media screen and (max-width: 767px) {
-    .sidenav {
-      height: auto;
-      padding: 15px;
-    }
-    .row.content {height: auto;} 
+  .sidenav {
+    height: auto;
+    padding: 15px;
   }
+  .row.content {height: auto;} 
+}
 @media (min-width: 768px){
 	.col-sm-3 {
 		width: 20%;
@@ -41,50 +41,83 @@
 
 /*active sidenav color*/
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-    color: #fff;
-    background-color: #E48F21;
+  color: #fff;
+  background-color: #E48F21;
 }
 
 /* non active pagination */
 .pagination > li > a, .pagination > li > span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    text-decoration: none;
-    color: #fff;
-    background-color: #1F1D3E;
-    border: 1px solid #1F1D3E;
-    margin-left: -1px;
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1F1D3E;
+  border: 1px solid #1F1D3E;
+  margin-left: -1px;
 }
 
 /*active pagination color*/
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    z-index: 2;
-    color: #fff;
-    background-color: #E48F21;
-    border-color: #E48F21;
-    cursor: default;
+  z-index: 2;
+  color: #fff;
+  background-color: #E48F21;
+  border-color: #E48F21;
+  cursor: default;
 }
 
 /*Disabled pagination*/
 .pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
-    color: #777777;
-    background-color: #1F1D3E;
-    border: 1px solid #1F1D3E;
-    cursor: not-allowed;
+  color: #777777;
+  background-color: #1F1D3E;
+  border: 1px solid #1F1D3E;
+  cursor: not-allowed;
 }
 
-/*When click "CHI TIẾT" after hover on product image then 
-redirect to detail page with those css like this*/
-#product-thumbnail{
+/*---------When click "CHI TIẾT" after hover on product image then 
+redirect to detail page with those css like this---------*/
+
+
+/*In product's detail page,
+this code will handle the thumbnail zoom when hover*/
+#zoom-thumbnail {
+  overflow: hidden; 
+}
+
+/* Thumbnail */
+#zoom-thumbnail #product-thumbnail  {
   width: 397px;
   height: 595px;
+  transition-duration: 0.5s;
+  /* Safari & Google Chrome */
+  -webkit-transition-duration: 0.5s;
+  /* Mozilla Firefox */
+  -moz-transition-duration: 0.5s;
+  /* Opera */
+  -o-transition-duration: 0.5s;
+  /* IE 9 */
+  -ms-transition-duration: 0.5s;
 }
 
+/* Hover mouse to thumbnail */
+#zoom-thumbnail #product-thumbnail:hover {
+  transform: scale(1.4);
+  /* Safari & Google Chrome */
+  -webkit-transform: scale(1.4);
+  /* Mozilla Firefox */
+  -moz-transform: scale(1.4);
+  /* Opera */
+  -o-transform: scale(1.4);
+  /* IE 9 */
+  -ms-transform: scale(1.4);
+  cursor: crosshair; 
+}
+
+
+/*Panel of product's detail information*/
 .panel.panel-warning{
-  height: 595px;
-  background: #E9E9E9
+  background: #E9E9E9;
 }
 
 .panel-warning > .panel-heading {
@@ -104,4 +137,32 @@ redirect to detail page with those css like this*/
 
 #product-description-detail{
   font-style: italic;
+}
+
+
+/*form control quantity*/
+.form-control{
+  width: 75%;
+  height: 40px;
+  font-size: 35px;
+  display: inline;
+}
+/*Always showing arrows*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+ opacity: 1;
+}
+
+
+/*Add to cart btn fix color*/
+.btn-danger {
+    color: #fff;
+    background-color: #8A6DF7;
+    border-color: #8A6DF7;
+}
+
+.btn-danger:hover{
+  background: #FA9C15;
+  border-color: #FA9C15;
+  transition: all .2s ease-in 0s;
 }

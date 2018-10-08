@@ -23,7 +23,9 @@
 			@if(isset($product))
 				<div class="row">
 					<div class="col-md-4">
-						<img src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="img-responsive img-thumbnail" id="product-thumbnail">
+						<div id="zoom-thumbnail">
+							<img src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="img-responsive img-thumbnail" id="product-thumbnail">
+						</div>
 					</div>
 					<div class="col-md-5">
 						<div class="panel panel-warning">
@@ -31,9 +33,17 @@
 								<div id="product-title-id">
 									{{ $product->title }} mã {{ $product->productid }}
 								</div>
-								<div id="product-price">
-									${{ $product->price }}
-								</div>
+								<form>
+									<span id="product-price">
+										${{ $product->price }}
+										<input type="hidden" name="thumbnail" id="thumbnail" value="{{ $product->thumbnail }}">
+										<input type="hidden" name="productid" id="productid" value="{{ $product->productid }}">
+										<input type="hidden" name="price" id="price" value="{{ $product->price }}">
+										<input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control" min="1" max="{{ $product->quantity }}" onkeydown="return false" required>
+										{{-- <input type="hidden" name="total" id="total"> --}}
+										<button type="submit" id="btnAddtocart" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+									</span>
+								</form>
 							</div>
 							<div class="panel-body">
 								<h3>Thông tin sản phẩm</h3><br>
