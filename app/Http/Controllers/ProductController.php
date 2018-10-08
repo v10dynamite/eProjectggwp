@@ -48,7 +48,7 @@ class ProductController extends Controller
             'quantity' => 'required',
             'price' => 'required',
             'description' => 'required',
-            'description_detail' => 'required'
+            'description_detail' => 'required|max:1000'
         ], [
             // 'title.required' => 'not null',
             // 'title.min' =>' title can lon hon 1', // DAY LA PHAN RENAME VALIDATE
@@ -97,6 +97,13 @@ class ProductController extends Controller
         return view('adminlte::product.edit', compact('product', 'productid', 'category'))->with('categoryid');
     }
 
+    //When click "CHI TIẾT" after hover on product image
+    public function detail($productid)
+    {
+        $product = Product::find($productid);
+        return view('adminlte::frontenddetail.detail', compact('product', 'productid'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -116,7 +123,7 @@ class ProductController extends Controller
                 'quantity' => 'required',
                 'price' => 'required',
                 'description' => 'required',
-                'description_detail' => 'required'
+                'description_detail' => 'required|max:1000'
             ]);
         }
         $this->validate($request, [

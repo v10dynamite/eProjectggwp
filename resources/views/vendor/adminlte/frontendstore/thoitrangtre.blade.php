@@ -65,7 +65,7 @@
 								<figure class="mix work-item action multiplayer">
 									<div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="gamelist"></div>
 									<figcaption class="overlay simpleCart_shelfItem">
-										<a class="gamedetail"  title="Detail" href="#">Chi Tiết</a>
+										<a class="gamedetail"  title="Detail" href="{{ action('ProductController@detail', $product->productid) }}">Chi Tiết</a>
 										<h4>Mã: {{ $product->productid }}</h4>
 										<p>{{ $product->description }}</p>
 										<div class="pricelist"><span id="price">${{ $product->price }}</span><img src="img/icon-windown.png" alt=""> <img src="img/icon-apple.png" alt=""> <img src="img/icon-xbox_0.png" alt=""></div>

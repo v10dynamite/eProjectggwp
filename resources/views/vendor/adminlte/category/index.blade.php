@@ -28,26 +28,28 @@
 				<table name="myTable" class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>NO</th>
 							<th>Category Group ID</th>
+							<th>Category Group Name</th>
 							<th>Category ID</th>
 							<th>Category Name</th>
 							<th>Created At</th>
 							<th>Updated At</th>
-							<th>Delete</th>
-							<th>Edit</th>
+							{{-- <th>Delete</th> --}}
+							{{-- <th>Edit</th> --}}
 						</tr>
 					</thead>
 					<tfoot>
 						<tr>
-							<th>ID</th>
+							<th>NO</th>
 							<th>Category Group ID</th>
+							<th>Category Group Name</th>
 							<th>Category ID</th>
 							<th>Category Name</th>
 							<th>Created At</th>
 							<th>Updated At</th>
-							<th>Delete</th>
-							<th>Edit</th>
+							{{-- <th>Delete</th> --}}
+							{{-- <th>Edit</th> --}}
 						</tr>
 					</tfoot>
 					<tbody>
@@ -57,23 +59,24 @@
 						@foreach($categories as $row)
 							<tr>
 								<td>{{ $count++ }}</td>
-								<td>{{ $row['categorygroup_id'] }}</td>
-								<td>{{ $row['categoryid'] }}</td>
-								<td>{{ $row['categoryname'] }}</td>
-								<td>{{ $row['created_at'] }}</td>
-								<td>{{ $row['updated_at'] }}</td>
-								<td>
-									<form name="delete_form" action="{{ action('CategoryController@destroy', $row['categoryid']) }}" method="POST">
+								<td>{{ $row->categorygroup_id }}</td>
+								<td>{{ $row->categorygroup_name }}</td>
+								<td>{{ $row->categoryid }}</td>
+								<td>{{ $row->categoryname }}</td>
+								<td>{{ $row->created_at }}</td>
+								<td>{{ $row->updated_at }}</td>
+								{{-- <td>
+									<form name="delete_form" action="{{ action('CategoryController@destroy', $row->categoryid) }}" method="POST">
 										{{ csrf_field() }}
 										<input type="hidden" name="_method" value="DELETE">
 										<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
 									</form>
 								</td> 
 								<td>
-									<a href="{{ action('CategoryController@edit', $row['categoryid']) }}" class="btn btn-info">
+									<a href="{{ action('CategoryController@edit', $row->categoryid) }}" class="btn btn-info">
 										<span class="glyphicon glyphicon-cog"></span>
 									</a>
-								</td>
+								</td> --}}
 							</tr>
 						@endforeach
 					</tbody>

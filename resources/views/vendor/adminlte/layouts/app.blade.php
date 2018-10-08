@@ -54,6 +54,9 @@ desired effect
             @yield('categoriesForm')
             @yield('categoriesList')
             @yield('categoryEdit')
+            @yield('galleriesForm')
+            @yield('galleriesList')
+            @yield('galleryEdit')
             {{-- @yield('ajaxall') --}}
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

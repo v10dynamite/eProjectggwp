@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('adminlte::homefrontend');
-})->name('/');
+// Route::get('/', function () {
+//     return view('adminlte::homefrontend');
+// })->name('/');
+
+// Route landing.blade.php (frontend home page)
+Route::get('/', [
+	'as' => '/',
+	'uses' => 'GalleryController@gallery'
+]);
 
 //Route THOI TRANG CONG SO
 
@@ -124,6 +130,15 @@ Route::group(['prefix' => '/mevabe'], function() {
 //END Route ME VA BE
 
 
+//Route for product detail information when click "CHI TIET"
+
+Route::get('/detail/{productid}', [
+	'uses' => 'ProductController@detail'
+]);
+
+//END Route for product detail information when click "CHI TIET"
+
+
 //Send email route
 Route::post('/sendemail', 'SendEmailController@send');
 
@@ -138,6 +153,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController');
 	Route::resource('product', 'ProductController');
 	Route::resource('category', 'CategoryController');
+	Route::resource('gallery', 'GalleryController');
 
 	Route::get('/ajaxdata', [
 		'as' => 'ajaxdata',

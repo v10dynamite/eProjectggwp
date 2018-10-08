@@ -33,7 +33,7 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.category') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('category/create') }}">{{ trans('adminlte_lang::message.addcategory') }}</a></li>
+                    {{-- <li><a href="{{ url('category/create') }}">{{ trans('adminlte_lang::message.addcategory') }}</a></li> --}}
                     <li><a href="{{ url('category') }}">{{ trans('adminlte_lang::message.listcategory') }}</a></li>
                 </ul>
             </li>
@@ -42,6 +42,13 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('product/create') }}">{{ trans('adminlte_lang::message.addproduct') }}</a></li>
                     <li><a href="{{ url('product') }}">{{ trans('adminlte_lang::message.listproduct') }}</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-picture-o'></i> <span>{{ trans('adminlte_lang::message.gallery') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('gallery/create') }}">{{ trans('adminlte_lang::message.newgallery') }}</a></li>
+                    <li><a href="{{ url('gallery') }}">{{ trans('adminlte_lang::message.listgallery') }}</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

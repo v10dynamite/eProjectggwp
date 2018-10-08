@@ -1,5 +1,9 @@
 @extends('adminlte::layouts.app')
 
+@section('htmlheader_title')
+	Edit product
+@endsection
+
 @section('productEdit')
 	<div class="container">
 		<div class="box box-solid box-danger">

@@ -21,6 +21,10 @@
 					Add Category
 				@elseif(Request::is('category'))
 					List Categories
+				@elseif(Request::is('gallery/create'))
+					Add Gallery
+				@elseif(Request::is('gallery'))
+					List Gallery
 				@else
 					Updating...
 				@endif

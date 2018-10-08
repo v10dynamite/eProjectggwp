@@ -71,6 +71,7 @@ return [
     'mevabe-be'               => 'Mẹ & Bé - Sản phẩm bé',
     'header'                  => 'MANAGEMENT SECTION',
     'product'                 => 'Product',
+    'productdetail'           => 'Product Detail',
     'addproduct'              => 'Add Product',
     'user'                    => 'User',
     'adduser'                 => 'Add User',
@@ -153,4 +154,7 @@ return [
     'fullname'                => 'Full Name',
     'listproduct'             => 'List Products',
     'feedback'                => 'Customer Feedback',
+    'gallery'                 => 'Gallery',
+    'newgallery'              => 'New Gallery',
+    'listgallery'             => 'List Gallery',
 ];

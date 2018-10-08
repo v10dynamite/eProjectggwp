@@ -16,7 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all()->toArray();
+        $categories = DB::table('categories')
+                        ->join('categoriesgroup', 'categoriesgroup.categorygroup_id', '=', 'categories.categorygroup_id')
+                        ->get();
         $latest_update = Category::latest('updated_at')->get();
         return view('adminlte::category.index', compact('categories', 'latest_update'));
     }

@@ -1,5 +1,9 @@
 @extends('adminlte::layouts.app')
 
+@section('htmlheader_title')
+	Edit category
+@endsection
+
 @section('categoryEdit')
 	<div class="container">
 		<div class="box box-solid box-danger">

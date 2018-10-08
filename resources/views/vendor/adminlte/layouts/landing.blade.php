@@ -50,6 +50,9 @@
         @yield('mevabe-be')
 
 
+        {{-- Product's detail information --}}
+        @yield('productdetail')
+
         
         @include('adminlte::layouts.partialsfrontend.footer')
             

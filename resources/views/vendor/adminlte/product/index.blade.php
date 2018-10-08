@@ -29,7 +29,7 @@
 				<table name="myTable" class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>NO</th>
 							<th>Category ID</th>
 							<th>Product ID</th>
 							<th>Title</th>
@@ -45,7 +45,7 @@
 					</thead>
 					<tfoot>
 						<tr>
-							<th>ID</th>
+							<th>NO</th>
 							<th>Category ID</th>
 							<th>Product ID</th>
 							<th>Title</th>
@@ -104,7 +104,7 @@
 	<div class="box box-solid box-info">
 		<div class="box-header with-border">
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-			<div class="box-title">Products Detail Description</div>
+			<div class="box-title">Product's Detail Description</div>
 		</div>
 		<div class="box-body">
 			@if(\Session::has('success'))

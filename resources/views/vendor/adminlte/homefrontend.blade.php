@@ -2,107 +2,99 @@
 
 
 @section('htmlheader_title')
-	{{ trans('adminlte_lang::message.homefrontend') }}
+{{ trans('adminlte_lang::message.homefrontend') }}
 @endsection
 
 
 @section('home-content')
 
 <section style="min-height: 80vh;" id="slider">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-                <!-- Indicators bullet -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                </ol>
-                <!-- End Indicators bullet -->              
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+        <!-- Indicators bullet -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <!-- End Indicators bullet -->              
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
 
-                    <!-- single slide -->
-                    <div class="item active" style="background-image: url({{ asset('img/logo_7.jpg') }});background-size: 100% 100%;">
-                        <div class="carousel-caption simpleCart_shelfItem">
-                            <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">BELOVED KIDS & MOM</h2>
-                            <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"> Các thiết kế dành cho bé đi sâu khai thác vào chất liệu, đảm bảo độ mềm mịn và thân thiện với làn da. Bên cạnh đó các thiết kế vừa giữ được nét tươi tắn, đáng yêu vốn có của các bé lại vừa toát lên được vẻ hiện đại khi diện đồ đôi cùng mẹ !!</h3>
-                            <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
-                            <p data-wow-duration="1000ms" class="wow slideInLeft animated"><span id="price">$24.00</span></a><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt="">
-                            </p>
-                            <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="#"><span class="item_price" style="display: none;">$24.00</span><button id="addtocart" >Mua hàng </button></a></div>
+            <!-- single slide -->
+            <div class="item active" style="background-image: url({{ asset('img/logo_7.jpg') }});background-size: 100% 100%;">
+                <div class="carousel-caption simpleCart_shelfItem">
+                    <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">BELOVED KIDS & MOM</h2>
+                    <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"> Các thiết kế dành cho bé đi sâu khai thác vào chất liệu, đảm bảo độ mềm mịn và thân thiện với làn da. Bên cạnh đó các thiết kế vừa giữ được nét tươi tắn, đáng yêu vốn có của các bé lại vừa toát lên được vẻ hiện đại khi diện đồ đôi cùng mẹ !!</h3>
+                    <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
+                    <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="{{ route('thoitrangcongso') }}"><span class="item_price" style="display: none;">$24.00</span><button id="addtocart" >To our store </button></a></div>
 
-                            
-                            <ul class="social-links text-center">
-                                <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end single slide -->
-                    
-                    <!-- single slide -->
-                    <div class="item" style="background-image: url({{ asset('img/logo_11.jpg') }});background-size: 100% 100%;">
-                        <div class="carousel-caption simpleCart_shelfItem">
-                            <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">STRIPE AND TOUCH</h2>
-                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Họa tiết kẻ sọc trên hai tone màu trắng - đen kinh điển sau bao thập niên vẫn giữ nguyên vẻ đẹp phóng khoáng của riêng mình .Hãy ngắm nhìn, chạm khẽ và trải nghiệm mùa hè của bản thân cùng Stripe & Touch bạn nhé !</h3>
-                            <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
-                            <p data-wow-duration="1000ms" class="wow slideInLeft animated"><span id="price">$35.00</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt="">
-                            </p>
-                            <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="#"><span class="item_price" style="display: none;">$35.00</span><button id="addtocart" >Mua hàng </button></a></div>
-                            <ul class="social-links text-center">
-                                <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end single slide -->
-                    <!-- single slide -->
-                    <div class="item" style="background-image: url({{ asset('img/logo_39.jpg') }});background-size: 100% 100%;">
-                        <div class="carousel-caption simpleCart_shelfItem">
-                            <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">TREND - FOCUS ON STYLE</h2>
-                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Sự đơn giản đến từ kiểu dáng và màu sắc mang đến cho bạn vẻ ngoài thanh lịch mà mỗi cô gái cần có . Hãy nhớ, luôn "focus on style" để tự tin diện đẹp mỗi ngày bạn nhé !</h3>
-                            <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
-                            <p data-wow-duration="1000ms" class="wow slideInLeft animated"><span id="price">$59.99</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt="">
-                            </p>
-                            <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="#"><span class="item_price" style="display: none;">$59.99</span><button id="addtocart" >Mua hàng </button></a></div>
-                            <ul class="social-links text-center">
-                                <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end single slide -->
-                    <!-- single slide -->
-                    <div class="item" style="background-image: url({{ asset('img/logo_15.jpg') }});background-size: 100% 100%;">
-                        <div class="carousel-caption simpleCart_shelfItem">
-                            <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">FEEL YOUNG FEEL BLUE</h2>
-                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Đánh thức nguồn năng lượng tích cực cho mùa hè bằng cách thay đổi bản thân, bắt đầu từ diện mạo. Những thiết kế mới nhất lấy `m hứng chủ đạo từ những đường kẻ sọc hiện đại kết hợp với tone màu với đen - trắng - xanh tinh tế sẽ là nguồn cảm hứng để bạn thỏa sức sáng tạo cùng guu thời trang của mình !</h3>
-                            <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
-                            <p data-wow-duration="1000ms" class="wow slideInLeft animated"><span id="price">$29.00</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt="">
-                            </p>
-                            <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="#"><span class="item_price" style="display: none;">$29.00</span><button id="addtocart" >Mua hàng </button></a></div>
-                            <ul class="social-links text-center">
-                                <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
-                                <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end single slide -->
+
+                    <ul class="social-links text-center">
+                        <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
+                    </ul>
                 </div>
-                <!-- End Wrapper for slides -->
-                
             </div>
-        </section>
-        
+            <!-- end single slide -->
+
+            <!-- single slide -->
+            <div class="item" style="background-image: url({{ asset('img/logo_11.jpg') }});background-size: 100% 100%;">
+                <div class="carousel-caption simpleCart_shelfItem">
+                    <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">STRIPE AND TOUCH</h2>
+                    <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Họa tiết kẻ sọc trên hai tone màu trắng - đen kinh điển sau bao thập niên vẫn giữ nguyên vẻ đẹp phóng khoáng của riêng mình .Hãy ngắm nhìn, chạm khẽ và trải nghiệm mùa hè của bản thân cùng Stripe & Touch bạn nhé !</h3>
+                    <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
+                    <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="{{ route('thoitrangcongso') }}"><span class="item_price" style="display: none;">$35.00</span><button id="addtocart" >To our store </button></a></div>
+                    <ul class="social-links text-center">
+                        <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end single slide -->
+            <!-- single slide -->
+            <div class="item" style="background-image: url({{ asset('img/logo_39.jpg') }});background-size: 100% 100%;">
+                <div class="carousel-caption simpleCart_shelfItem">
+                    <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">TREND - FOCUS ON STYLE</h2>
+                    <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Sự đơn giản đến từ kiểu dáng và màu sắc mang đến cho bạn vẻ ngoài thanh lịch mà mỗi cô gái cần có . Hãy nhớ, luôn "focus on style" để tự tin diện đẹp mỗi ngày bạn nhé !</h3>
+                    <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
+                    <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="{{ route('thoitrangcongso') }}"><span class="item_price" style="display: none;">$59.99</span><button id="addtocart" >To our store </button></a></div>
+                    <ul class="social-links text-center">
+                        <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end single slide -->
+            <!-- single slide -->
+            <div class="item" style="background-image: url({{ asset('img/logo_15.jpg') }});background-size: 100% 100%;">
+                <div class="carousel-caption simpleCart_shelfItem">
+                    <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">FEEL YOUNG FEEL BLUE</h2>
+                    <h3 data-wow-duration="500ms" class="wow slideInLeft animated">Đánh thức nguồn năng lượng tích cực cho mùa hè bằng cách thay đổi bản thân, bắt đầu từ diện mạo. Những thiết kế mới nhất lấy `m hứng chủ đạo từ những đường kẻ sọc hiện đại kết hợp với tone màu với đen - trắng - xanh tinh tế sẽ là nguồn cảm hứng để bạn thỏa sức sáng tạo cùng guu thời trang của mình !</h3>
+                    <p data-wow-duration="1000ms" class="wow slideInRight animated"><span>Chú ý :</span> Giá trong cửa hàng thời trang có thể khác nhau !</p>
+                    <div data-wow-duration="1000ms" class="wow slideInRight animated"><a class="item_add" href="{{ route('thoitrangcongso') }}"><span class="item_price" style="display: none;">$29.00</span><button id="addtocart" >To our store </button></a></div>
+                    <ul class="social-links text-center">
+                        <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
+                        <li><a href=""><i class="fab fa-dribbble fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end single slide -->
+        </div>
+        <!-- End Wrapper for slides -->
+
+    </div>
+</section>
+
         <!--
         End Home SliderEnd
         ==================================== -->
@@ -209,111 +201,79 @@
                     <div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
                         <ul class="text-center">
                             <li><a href="javascript:;" data-filter="all" class="active filter">All</a></li>
-                            <li><a href="javascript:;" data-filter=".action" class="filter">Cá Tính</a></li>
-                            <li><a href="javascript:;" data-filter=".adventure" class="filter">Phong Cách</a></li>
-                            <li><a href="javascript:;" data-filter=".casual" class="filter">Quyến Rũ</a></li>
-                            <li><a href="javascript:;" data-filter=".multiplayer" class="filter">Trẻ Trung</a></li>
-                            <li><a href="javascript:;" data-filter=".RPG" class="filter">Năng Động</a></li>
-                            <li><a href="javascript:;" data-filter=".sport" class="filter">Thanh Lịch</a></li>
+                            <li><a href="javascript:;" data-filter=".action" class="filter">Đầm Nữ</a></li>
+                            <li><a href="javascript:;" data-filter=".adventure" class="filter">Áo Nữ</a></li>
+                            <li><a href="javascript:;" data-filter=".casual" class="filter">Quần Nữ</a></li>
+                            <li><a href="javascript:;" data-filter=".multiplayer" class="filter">Chân Váy</a></li>
+                            <li><a href="javascript:;" data-filter=".RPG" class="filter">Bộ Liền</a></li>
+                            <li><a href="javascript:;" data-filter=".sport" class="filter">Thời Trang Mẹ và Bé</a></li>
                         </ul>
                         <ul class="text-center">
-                        	<li><a href="{{ route('thoitrangcongso') }}" data-filter="all" class="filter">Tôi muốn mua sản phẩm của bộ sưu tập</a></li>
+                        	<li><a href="{{ route('thoitrangcongso') }}" class="filter">Tôi muốn mua sản phẩm của bộ sưu tập</a></li>
                         </ul>
                     </div>
-                    <!-- <select name="" id="">
-                        <option value="" data-filter=".action" class="filter">Action</option>
-                        <option value="" data-filter=".adventure" class="filter">Advench</option>
-                    </select> -->
+                    
                 </div>
+
+                {{-- Showing item from Gallery --}}
                 <div class="project-wrapper">
-                    <figure class="mix work-item action">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_24.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Chi Tiết</a>
-                            <h4>Mã C1803L01</h4>
-                            <p>Năng động , ngày mới vui vẻ ... </p>
-                            <div class="pricelist"><span id="price">$24.00</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$24.00</span><button id="addtocart">Mua hàng </button></a>
-                        </figcaption>
-                    </figure>
+
+                    @foreach($damnu as $row)
+                        <figure class="mix work-item action">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+
+                    @foreach($aonu as $row)
+                        <figure class="mix work-item adventure">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+
+                    @foreach($quannu as $row)
+                        <figure class="mix work-item casual">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+
+                    @foreach($chanvay as $row)
+                        <figure class="mix work-item multiplayer">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+
+                    @foreach($bolien as $row)
+                        <figure class="mix work-item RPG">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+
+                    @foreach($mevabe as $row)
+                        <figure class="mix work-item sport">
+                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <figcaption class="overlay simpleCart_shelfItem">
+                                <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
+                            </figcaption>
+                        </figure>
+                    @endforeach
                     
-                    <figure class="mix work-item adventure multiplayer">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_25.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Chi Tiết</a>
-                            <h4>Mã C1803L02</h4>
-                            <p>Giản dị mà đẹp kỳ diệu ... </p>
-                            <div class="pricelist"><span id="price">$23.00</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$23.00</span><button id="addtocart">Mua hàng </button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item action multiplayer">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_26.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Mua hàng </a>
-                            <h4>Mã C1803L03</h4>
-                            <p>Tự tin khoe cá tính ... </p>
-                            <div class="pricelist"><span id="price">$99.00</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$99.00</span><button id="addtocart">Mua hàng </button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item action adventure casual">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_27.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Chi Tiết</a>
-                            <h4>Mã C1803L04</h4>
-                            <p>Phong cách quyến lũ lạ thường ... </p>
-                            <div class="pricelist"><span id="price">$19.99</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$19.99</span><button id="addtocart" >Mua hàng </button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item action multiplayer sport">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_28.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Detail</a>
-                            <h4>Mã C1803L05</h4>
-                            <p>Đậm chất quý  phái sang trọng ...</p>
-                            <div class="pricelist"><span id="price">$25.99</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$25.99</span><button id="addtocart" >Add to cart</button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item casual RPG">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_29.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Detail</a>
-                            <h4>Mã C1803L06</h4>
-                            <p>Tôn lên body của cơ thể ... </p>
-                            <div class="pricelist"><span id="price">$27.90</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$27.90</span><button id="addtocart">Add to cart</button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item RPG">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_30.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Detail</a>
-                            <h4>Mã C1803L07</h4>
-                            <p>Mang khuynh hướng lịch lãm ...  </p>
-                            <div class="pricelist"><span id="price">$39.99</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$39.99</span><button id="addtocart" >Add to cart</button></a>
-                        </figcaption>
-                    </figure>
-                    
-                    <figure class="mix work-item multiplayer">
-                        <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ asset('img/logo_31.jpg') }}" alt="" class="gamelist"></div>
-                        <figcaption class="overlay simpleCart_shelfItem">
-                            <a class="gamedetail"  title="Detail" href="#">Detail</a>
-                            <h4>Mã C1803L08</h4>
-                            <p>Giúp hồi xuân ...</p>
-                            <div class="pricelist"><span id="price">$49.99</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-                            <a class="item_add" href="#"><span class="item_price" style="display: none;">$49.99</span><button id="addtocart">Add to cart</button></a>
-                        </figcaption>
-                    </figure>
-                </div>
+                </div> {{-- END Showing item from Gallery --}}
+
             </div> <!-- End container -->
         </section>
         
@@ -576,4 +536,4 @@
         End Contact Us
         ==================================== -->
 
-@endsection
+        @endsection

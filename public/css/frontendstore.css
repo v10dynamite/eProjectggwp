@@ -52,9 +52,9 @@
     padding: 6px 12px;
     line-height: 1.42857143;
     text-decoration: none;
-    color: rgb(108,182,112);
-    background-color: #fff;
-    border: 1px solid #ddd;
+    color: #fff;
+    background-color: #1F1D3E;
+    border: 1px solid #1F1D3E;
     margin-left: -1px;
 }
 
@@ -65,4 +65,43 @@
     background-color: #E48F21;
     border-color: #E48F21;
     cursor: default;
+}
+
+/*Disabled pagination*/
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    color: #777777;
+    background-color: #1F1D3E;
+    border: 1px solid #1F1D3E;
+    cursor: not-allowed;
+}
+
+/*When click "CHI TIẾT" after hover on product image then 
+redirect to detail page with those css like this*/
+#product-thumbnail{
+  width: 397px;
+  height: 595px;
+}
+
+.panel.panel-warning{
+  height: 595px;
+  background: #E9E9E9
+}
+
+.panel-warning > .panel-heading {
+  color: #8A6DF7;
+  background-color: #fff; 
+  border-color: #8A6CC1;
+}
+
+#product-title-id{
+  font-size: 28px;
+}
+
+#product-price{
+  font-size: 35px;
+  color: red;
+}
+
+#product-description-detail{
+  font-style: italic;
 }
