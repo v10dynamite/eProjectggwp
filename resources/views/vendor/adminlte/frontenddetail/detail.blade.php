@@ -33,13 +33,13 @@
 								<div id="product-title-id">
 									{{ $product->title }} mã {{ $product->productid }}
 								</div>
-								<form>
+								<form autocomplete="off">
 									<span id="product-price">
 										${{ $product->price }}
 										<input type="hidden" name="thumbnail" id="thumbnail" value="{{ $product->thumbnail }}">
 										<input type="hidden" name="productid" id="productid" value="{{ $product->productid }}">
 										<input type="hidden" name="price" id="price" value="{{ $product->price }}">
-										<input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control" min="1" max="{{ $product->quantity }}" onkeydown="return false" required>
+										<input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control" min="1" max="{{ $product->quantity }}" onkeydown="return false">
 										{{-- <input type="hidden" name="total" id="total"> --}}
 										<button type="submit" id="btnAddtocart" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
 									</span>

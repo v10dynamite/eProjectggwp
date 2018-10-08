@@ -15,13 +15,13 @@
 //     return view('adminlte::homefrontend');
 // })->name('/');
 
-// Route landing.blade.php (frontend home page)
+//------------------ Route landing.blade.php (frontend home page) ------------------//
 Route::get('/', [
 	'as' => '/',
 	'uses' => 'GalleryController@gallery'
 ]);
 
-//Route THOI TRANG CONG SO
+//------------------ Route THOI TRANG CONG SO ------------------//
 
 Route::group(['prefix' => '/thoitrangcongso'], function() {
 	//All thoitrangcongso products
@@ -64,7 +64,7 @@ Route::group(['prefix' => '/thoitrangcongso'], function() {
 //END Route THOI TRANG CONG SO
 
 
-//Route THOI TRANG TRE
+//------------------ Route THOI TRANG TRE ------------------//
 Route::group(['prefix' => '/thoitrangtre'], function() {
 	//All thoitrangtre products
 	Route::get('/', [
@@ -106,7 +106,7 @@ Route::group(['prefix' => '/thoitrangtre'], function() {
 //END Route THOI TRANG TRE
 
 
-//Route ME VA BE
+//------------------ Route ME VA BE ------------------//
 Route::group(['prefix' => '/mevabe'], function() {
 	//All mevabe products
 	Route::get('/', [
@@ -130,7 +130,7 @@ Route::group(['prefix' => '/mevabe'], function() {
 //END Route ME VA BE
 
 
-//Route for product detail information when click "CHI TIET"
+//------------------Route for product detail information when click "CHI TIET" ------------------//
 
 Route::get('/detail/{productid}', [
 	'uses' => 'ProductController@detail'
@@ -139,9 +139,25 @@ Route::get('/detail/{productid}', [
 //END Route for product detail information when click "CHI TIET"
 
 
-//Send email route
-Route::post('/sendemail', 'SendEmailController@send');
+//------------------ Route cart ------------------//
 
+Route::get('/cart', function() {
+    return view('adminlte::frontenddetail.cart');
+})->name('cart');
+
+//END Route cart
+
+
+//------------------ Send email route ------------------//
+Route::post('/sendemail', 'SendEmailController@send');
+//END send email route
+
+
+
+
+
+
+//------------------ Auth Middleware for admins ------------------// 
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
@@ -155,6 +171,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('category', 'CategoryController');
 	Route::resource('gallery', 'GalleryController');
 
+
+	//Ajax for insert data (NOT USED)
 	Route::get('/ajaxdata', [
 		'as' => 'ajaxdata',
 		'uses' => 'AjaxdataController@index'

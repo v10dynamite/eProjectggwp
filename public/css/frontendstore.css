@@ -156,13 +156,25 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*Add to cart btn fix color*/
 .btn-danger {
-    color: #fff;
-    background-color: #8A6DF7;
-    border-color: #8A6DF7;
+  color: #fff;
+  background-color: #8A6DF7;
+  border-color: #8A6DF7;
 }
 
 .btn-danger:hover{
   background: #FA9C15;
   border-color: #FA9C15;
   transition: all .2s ease-in 0s;
+}
+
+/*On Cart view panel primary*/
+.panel-primary {
+  opacity: 0.93;
+  border-color: #3379FF;
+}
+
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #3379FF;
+  border-color: #3379FF;
 }

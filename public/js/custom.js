@@ -143,16 +143,54 @@ $(document).ready(function(){
 	/*	Localstorage add to cart at view adminlte::frontenddetail.detail
 	/* ========================================================================= */
 
-	// $('#btnAddtocart').click(function () {
-	// 	var obj = {
-			
-	// 	}
-	// });
+	$('#btnAddtocart').click(function () {
+		var thumbnail = $("#thumbnail").val();
+		var productid = $("#productid").val();
+		var price = $("#price").val();
+		var quantity = $("#quantity").val();
+		var subtotal = $("#quantity").val() * $("#price").val();
+		
+		if (quantity == '') {
+			alert('Please input quantity by using these arrows');
+		} else {
+			var obj = {
+				'thumbnail': thumbnail,
+				'productid': productid,
+				'price': price,
+				'quantity': quantity,
+				'subtotal': subtotal
+			}
+			dataList.push(obj);
+			sessionStorage.setItem("dataList", JSON.stringify(dataList));
+			var n = dataList.length;
+		}
+	});
+
+	var json = sessionStorage.getItem("dataList");
+	if(json == null || json == '') return;
+	dataList = JSON.parse(json);
+	for (var i = 0; i < dataList.length; i++) {
+		$('#cartResult').append(`<tr>
+				<td>${i+1}</td>
+				<td style="width: 10%;"><img src="${dataList[i].thumbnail}" class="img-thumbnail img-responsive" alt="Your Item ${dataList[i].productid}" style="width: 100%;"></td>
+				<td>${dataList[i].productid}</td>
+				<td>${dataList[i].price}</td>
+				<td>${dataList[i].quantity}</td>
+				<td>${dataList[i].subtotal}</td>
+				<td><button class="btn btn-warning" onclick="deleteProduct(${i})">Remove</button></td>
+			</tr>`);
+	}
 
 
 	
 });
-
+//function delete item from YOUR CART
+function deleteProduct(index) {
+	dataList.splice(index, 1);
+	sessionStorage.removeItem("dataList");
+	sessionStorage.setItem("dataList", JSON.stringify(dataList));
+	location.reload();
+}
 
 /* ========================================================================= */
 /*	Contact Form

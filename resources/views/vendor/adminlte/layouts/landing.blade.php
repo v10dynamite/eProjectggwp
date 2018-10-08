@@ -53,7 +53,9 @@
         {{-- Product's detail information --}}
         @yield('productdetail')
 
-        
+        {{-- Customer Cart --}}
+        @yield('cart')
+
         @include('adminlte::layouts.partialsfrontend.footer')
             
         <a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
