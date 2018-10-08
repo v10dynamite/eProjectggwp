@@ -47,6 +47,7 @@ return [
     '503error'                => '503 Error Page',
     'level'                   => 'Level',
     'here'                    => 'Here',
+    'cart'                    => 'Crystal Boutique - Your Cart',
     'recentactivity'          => 'Recent Activity',
     'descriptionpackage'      => 'A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template',
     'createdby'               => 'Created by',
