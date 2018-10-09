@@ -14,7 +14,7 @@
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangtre') }}">THỜI TRANG TRẺ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
-					<li class="nav-item"><a href="#">GIỎ HÀNG</a></li>
+					<li class="nav-item"><a href="{{ route('cart') }}">GIỎ HÀNG</a></li>
 				</ul>
 			</div>
 		</div>

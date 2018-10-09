@@ -142,7 +142,7 @@ $(document).ready(function(){
     /* ========================================================================= */
 	/*	Localstorage add to cart at view adminlte::frontenddetail.detail
 	/* ========================================================================= */
-
+	var total = 0;
 	$('#btnAddtocart').click(function () {
 		var thumbnail = $("#thumbnail").val();
 		var productid = $("#productid").val();
@@ -170,6 +170,7 @@ $(document).ready(function(){
 	if(json == null || json == '') return;
 	dataList = JSON.parse(json);
 	for (var i = 0; i < dataList.length; i++) {
+		total += dataList[i].subtotal;
 		$('#cartResult').append(`<tr>
 				<td>${i+1}</td>
 				<td style="width: 10%;"><img src="${dataList[i].thumbnail}" class="img-thumbnail img-responsive" alt="Your Item ${dataList[i].productid}" style="width: 100%;"></td>
@@ -180,7 +181,10 @@ $(document).ready(function(){
 				<td><button class="btn btn-warning" onclick="deleteProduct(${i})">Remove</button></td>
 			</tr>`);
 	}
-
+	if (total > 0) {
+		$('#total').html(`Total: $${total}`).css({"font-size": "25px", "color": "red"});
+	}
+	total = 0;
 
 	
 });

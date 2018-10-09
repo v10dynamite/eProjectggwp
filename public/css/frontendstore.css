@@ -31,7 +31,7 @@
     height: auto;
     padding: 15px;
   }
-  .row.content {height: auto;} 
+  .row.content {height: auto;}
 }
 @media (min-width: 768px){
 	.col-sm-3 {
@@ -141,7 +141,7 @@ this code will handle the thumbnail zoom when hover*/
 
 
 /*form control quantity*/
-.form-control{
+#quantity.form-control{
   width: 75%;
   height: 40px;
   font-size: 35px;
@@ -177,4 +177,8 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff;
   background-color: #3379FF;
   border-color: #3379FF;
+}
+
+#cartTable th,td{
+  text-align: center;
 }
