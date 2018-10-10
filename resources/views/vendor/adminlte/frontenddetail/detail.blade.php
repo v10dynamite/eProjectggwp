@@ -14,7 +14,7 @@
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangtre') }}">THỜI TRANG TRẺ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
-					<li class="nav-item"><a href="{{ route('cart') }}">GIỎ HÀNG</a></li>
+					<li class="nav-item"><a href="{{ route('cart.create') }}">GIỎ HÀNG</a></li>
 				</ul>
 			</div>
 		</div>
@@ -33,15 +33,16 @@
 								<div id="product-title-id">
 									{{ $product->title }} mã {{ $product->productid }}
 								</div>
-								<form autocomplete="off">
+								<form id="formAddtocart" autocomplete="off">
 									<span id="product-price">
 										${{ $product->price }}
 										<input type="hidden" name="thumbnail" id="thumbnail" value="{{ $product->thumbnail }}">
 										<input type="hidden" name="productid" id="productid" value="{{ $product->productid }}">
 										<input type="hidden" name="price" id="price" value="{{ $product->price }}">
-										<input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control" min="1" max="{{ $product->quantity }}" onkeydown="return false">
+										<input type="number" name="quantity" id="quantity" placeholder="Quantity" class="form-control" min="1" max="{{ $product->quantity }}">
 										{{-- <input type="hidden" name="total" id="total"> --}}
 										<button type="submit" id="btnAddtocart" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+										<a href="{{ route('cart.create') }}" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> View Cart</a>
 									</span>
 								</form>
 							</div>

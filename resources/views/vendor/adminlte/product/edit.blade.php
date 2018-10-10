@@ -39,11 +39,11 @@
 						<label for="title">Title</label>
 						<input type="text" name="title" value="{{ $product->title }}" class="form-control">
 					</div>
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label for="thumbnail">Thumbnail</label>
 						<input type="file" name="thumbnail" id="thumbnail" value="{{ $product->thumbnail }}" class="form-control">
 						<img id="thumbnail_show" src="{{ $product->thumbnail }}" alt="Thumbnail show after choose file" class="img-thumbnail img-responsive" width="300">
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<label for="quantity">Quantity</label>
 						<input type="text" name="quantity" value="{{ $product->quantity }}" class="form-control">

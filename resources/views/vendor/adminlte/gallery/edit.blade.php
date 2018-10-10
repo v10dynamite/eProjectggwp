@@ -30,12 +30,12 @@
 	  							<option @if($row['categoryid'] == $gallery->categoryid) selected @endif value="{{ $row['categoryid'] }}">{{ $row['categoryid'] }}</option>
 	  						@endforeach
 	  					</select>
-					</div>
+					</div>{{-- 
 					<div class="form-group">
 						<label for="thumbnail">Thumbnail</label>
 						<input type="file" name="thumbnail" id="thumbnail" value="{{ $gallery->thumbnail }}" class="form-control">
 						<img id="thumbnail_show" src="{{ $gallery->thumbnail }}" alt="Thumbnail show after choose file" class="img-thumbnail img-responsive" width="300">
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<label for="description">Description</label>
 						<input type="text" name="description" value="{{ $gallery->description }}" class="form-control">

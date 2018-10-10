@@ -119,7 +119,7 @@ class ProductController extends Controller
             $this->validate($request, [
                 'productid' => 'required|unique:products',
                 'title' => 'required',
-                'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                // 'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'quantity' => 'required',
                 'price' => 'required',
                 'description' => 'required',
@@ -128,21 +128,21 @@ class ProductController extends Controller
         }
         $this->validate($request, [
             'title' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // 'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'quantity' => 'required',
             'price' => 'required',
             'description' => 'required',
             'description_detail' => 'required'
         ]);
-        if ($request->hasFile('thumbnail')) {
-            $image = $request->file('thumbnail');
-            $image->move(public_path('img'), $image->getClientOriginalName());
-            $image_url = asset('img').'/'.$image->getClientOriginalName();
-        }
+        // if ($request->hasFile('thumbnail')) {
+        //     $image = $request->file('thumbnail');
+        //     $image->move(public_path('img'), $image->getClientOriginalName());
+        //     $image_url = asset('img').'/'.$image->getClientOriginalName();
+        // }
         $product->categoryid = $input['categoryid'];
         $product->productid = $input['productid'];
         $product->title = $input['title'];
-        $product->thumbnail = $image_url;
+        // $product->thumbnail = $image_url;
         $product->quantity = $input['quantity'];
         $product->price = $input['price'];
         $product->description = $input['description'];

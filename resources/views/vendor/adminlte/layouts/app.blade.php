@@ -57,6 +57,7 @@ desired effect
             @yield('galleriesForm')
             @yield('galleriesList')
             @yield('galleryEdit')
+            @yield('customerordered')
             {{-- @yield('ajaxall') --}}
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

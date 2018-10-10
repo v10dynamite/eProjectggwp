@@ -51,6 +51,7 @@
                     <li><a href="{{ url('gallery') }}">{{ trans('adminlte_lang::message.listgallery') }}</a></li>
                 </ul>
             </li>
+            <li class="{{ Request::is('cart') ? "active" : "" }}"><a href="{{ url('cart') }}"><i class='fa fa-shopping-cart'></i> <span>{{ trans('adminlte_lang::message.customerordered') }}</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

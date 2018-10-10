@@ -101,7 +101,7 @@
 	</div> {{-- END product short information --}}
 
 	{{-- product with description_detail --}}	
-	<div class="box box-solid box-info">
+	{{-- <div class="box box-solid box-info">
 		<div class="box-header with-border">
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 			<div class="box-title">Product's Detail Description</div>
@@ -161,7 +161,7 @@
 		@else
 			<div class="panel-footer small text-muted">Last updated at</div>
 		@endif
-	</div> {{-- END product with description_detail --}}
+	</div> --}} {{-- END product with description_detail --}}
 
 	<p class="small text-center text-muted">
 		<em>More products coming soon...</em>

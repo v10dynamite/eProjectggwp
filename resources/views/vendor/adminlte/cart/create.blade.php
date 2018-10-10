@@ -14,7 +14,7 @@
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangtre') }}">THỜI TRANG TRẺ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
-					<li class="nav-item"><a href="{{ route('cart') }}">GIỎ HÀNG</a></li>
+					<li class="nav-item"><a href="{{ route('cart.create') }}">GIỎ HÀNG</a></li>
 				</ul>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 						<tbody id="cartResult"></tbody>
 					</table>
 					<div class="pull-left">
-						<a href="{{ route('cart') }}" class="btn btn-success"><span class="	glyphicon glyphicon-refresh"></span> Update the cart</a>
+						<a href="{{ route('cart.create') }}" class="btn btn-success"><span class="	glyphicon glyphicon-refresh"></span> Update the cart</a>
 					</div>
 					<div id="total" class="pull-right"></div>
 				</div>
@@ -47,7 +47,9 @@
 			<div class="panel panel-info" style="opacity: 0.92;">
 				<div class="panel-heading"><span class="fa fa-shopping-cart"></span> <b>THÔNG TIN GIAO DỊCH</b></div>
 				<div class="panel-body">
-					<form action="" method="POST">
+					<form action="{{ url('cart') }}" method="POST" id="cartForm">
+						{{ csrf_field() }}
+						<input type="hidden" name="cartTotal" id="cartTotal"> {{-- Set total for input value from localstorage --}}
 						<div class="form-group">
 							<label for="name">Fullname</label>
 							<input type="text" name="name" id="name" placeholder="Your Fullname" class="form-control" required>
@@ -65,11 +67,7 @@
 							<input type="address" name="address" id="address" placeholder="Number of house, street name, ward, commune, district, city" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<label for="address">Address</label>
-							<textarea name="note" id="note" placeholder="Note..." class="form-control" style="resize: vertical;"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Submit" class="btn btn-danger">
+							<input type="submit" value="Proceed Payment" class="btn btn-danger">
 						</div>
 					</form>
 				</div>
@@ -78,5 +76,11 @@
 
 	</div>
 </div>
+
+@if(count($errors) > 0)
+	<script type="text/javascript">
+		alert('Your cart is empty!');
+	</script>					
+@endif
 
 @endsection

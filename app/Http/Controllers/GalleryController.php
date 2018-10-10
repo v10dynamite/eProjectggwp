@@ -95,16 +95,16 @@ class GalleryController extends Controller
         $gallery = Gallery::find($id);
         $input = $request->all();
         $this->validate($request, [
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // 'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'description' => 'required',
         ]);
-        if ($request->hasFile('thumbnail')) {
-            $image = $request->file('thumbnail');
-            $image->move(public_path('img'), $image->getClientOriginalName());
-            $image_url = asset('img').'/'.$image->getClientOriginalName();
-        }
+        // if ($request->hasFile('thumbnail')) {
+        //     $image = $request->file('thumbnail');
+        //     $image->move(public_path('img'), $image->getClientOriginalName());
+        //     $image_url = asset('img').'/'.$image->getClientOriginalName();
+        // }
         $gallery->categoryid = $input['categoryid'];
-        $gallery->thumbnail = $image_url;
+        // $gallery->thumbnail = $image_url;
         $gallery->description = $input['description'];
         $gallery->save();
         return redirect()->route('gallery.index')->with('success', 'Data Updated');

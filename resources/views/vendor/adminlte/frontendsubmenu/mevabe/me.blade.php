@@ -17,7 +17,7 @@
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangtre') }}">THỜI TRANG TRẺ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
-					<li class="nav-item"><a href="{{ route('cart') }}">GIỎ HÀNG</a></li>
+					<li class="nav-item"><a href="{{ route('cart.create') }}">GIỎ HÀNG</a></li>
 				</ul>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 										<h4>Mã: {{ $product->productid }}</h4>
 										<p>{{ $product->description }}</p>
 										<div class="pricelist"><span id="price">${{ $product->price }}</span><img src="{{ asset('img/icon-windown.png') }}" alt=""> <img src="{{ asset('img/icon-apple.png') }}" alt=""> <img src="{{ asset('img/icon-xbox_0.png') }}" alt=""></div>
-										<a class="item_add" href="#"><span class="item_price" style="display: none;">${{ $product->price }}</span><button id="addtocart">Giỏ hàng </button></a>
+										<a class="item_add" href="{{ action('ProductController@detail', $product->productid) }}"><span class="item_price" style="display: none;">${{ $product->price }}</span><button id="addtocart">Mua hàng </button></a>
 									</figcaption>
 								</figure>
 							@endforeach

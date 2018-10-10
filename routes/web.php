@@ -130,20 +130,18 @@ Route::group(['prefix' => '/mevabe'], function() {
 //END Route ME VA BE
 
 
-//------------------Route for product detail information when click "CHI TIET" ------------------//
 
+//------------------Route for product detail information when click "CHI TIET" ------------------//
 Route::get('/detail/{productid}', [
 	'uses' => 'ProductController@detail'
 ]);
-
 //END Route for product detail information when click "CHI TIET"
+
 
 
 //------------------ Route cart ------------------//
 
-Route::get('/cart', function() {
-    return view('adminlte::frontenddetail.cart');
-})->name('cart');
+Route::resource('cart', 'CartController');
 
 //END Route cart
 
@@ -170,6 +168,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('product', 'ProductController');
 	Route::resource('category', 'CategoryController');
 	Route::resource('gallery', 'GalleryController');
+
+	//Use auth middleware for cart.index (customer ordered management)
+	Route::get('/cart', [
+		'as' => 'cart.index',
+		'uses' => 'CartController@index'
+	]);
 
 
 	//Ajax for insert data (NOT USED)

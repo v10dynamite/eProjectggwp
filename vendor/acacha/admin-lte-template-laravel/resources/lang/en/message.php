@@ -158,4 +158,5 @@ return [
     'gallery'                 => 'Gallery',
     'newgallery'              => 'New Gallery',
     'listgallery'             => 'List Gallery',
+    'customerordered'         => 'Customer Ordered',
 ];

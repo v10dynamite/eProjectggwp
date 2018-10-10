@@ -143,7 +143,7 @@ $(document).ready(function(){
 	/*	Localstorage add to cart at view adminlte::frontenddetail.detail
 	/* ========================================================================= */
 	var total = 0;
-	$('#btnAddtocart').click(function () {
+	$('#formAddtocart').submit(function () {
 		var thumbnail = $("#thumbnail").val();
 		var productid = $("#productid").val();
 		var price = $("#price").val();
@@ -183,9 +183,13 @@ $(document).ready(function(){
 	}
 	if (total > 0) {
 		$('#total').html(`Total: $${total}`).css({"font-size": "25px", "color": "red"});
+		$('#cartTotal').val(total);
 	}
+	$('#cartForm').submit(function(){
+		alert("Your order has been sent!");
+		sessionStorage.clear();
+	});
 	total = 0;
-
 	
 });
 //function delete item from YOUR CART
