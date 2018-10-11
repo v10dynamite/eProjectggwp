@@ -130,6 +130,7 @@ class GalleryController extends Controller
 
     public function gallery(Request $request)
     {
+        //---------Displaying items from gallery---------//
         $damnu = DB::table('galleries')
                     ->where('categoryid', '=', 'C01')
                     ->orWhere('categoryid', '=', 'C06')
@@ -160,7 +161,39 @@ class GalleryController extends Controller
                     ->orWhere('categoryid', '=', 'C12')
                     ->paginate(12);
 
-        return view('adminlte::homefrontend', compact('damnu', 'aonu', 'quannu', 'chanvay', 'bolien', 'mevabe'));
+
+        //---------Statistics each kind of products and number of Admins---------//
+        $thoitrangcongsoall = DB::table('products')
+                            ->select('productid')
+                            ->join('categories','products.categoryid','=','categories.categoryid')
+                            ->where('categorygroup_id', '=', 'CG1')
+                            ->get()->toArray();
+
+        $countthoitrangcongso = count($thoitrangcongsoall);
+
+        $thoitrangtreall = DB::table('products')
+                            ->select('productid')
+                            ->join('categories','products.categoryid','=','categories.categoryid')
+                            ->where('categorygroup_id', '=', 'CG2')
+                            ->get()->toArray();
+
+        $countthoitrangtre = count($thoitrangtreall);
+
+        $mevabeall = DB::table('products')
+                        ->select('productid')
+                        ->join('categories','products.categoryid','=','categories.categoryid')
+                        ->where('categorygroup_id', '=', 'CG3')
+                        ->get()->toArray();
+
+        $countmevabe = count($mevabeall);
+
+        $users = DB::table('users')
+                ->select('id')
+                ->get()->toArray();
+
+        $countusers = count($users);
+
+        return view('adminlte::homefrontend', compact('damnu', 'aonu', 'quannu', 'chanvay', 'bolien', 'mevabe', 'countthoitrangcongso', 'countthoitrangtre', 'countmevabe', 'countusers'));
     }
 
     //END Handling data from frontend home page #gallery

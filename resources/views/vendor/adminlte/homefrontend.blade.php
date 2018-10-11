@@ -329,7 +329,7 @@
                             <figcaption class="overlay">
                                 <h5>Huy Hoàng</h5>
                                 <p>Tuổi : 19 !</p>
-                                <p>Người bình thường ^^</p>
+                                <p>Người bình thường aka Mr.nonDAFUg ^^</p>
                                 <ul class="social-links text-center">
                                     <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
                                     <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
@@ -408,7 +408,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
                             <div class="counters-item">
                                 <i class="fa fa-clock fa-3x"></i>
-                                <strong data-to="20"></strong>
+                                <strong data-to="{{ $countthoitrangcongso }}"></strong>
                                 
                                 <p>Thời Trang Công Sở</p>
                             </div>
@@ -416,7 +416,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="counters-item">
                                 <i class="fa fa-users fa-3x"></i>
-                                <strong data-to="25"></strong>
+                                <strong data-to="{{ $countthoitrangtre }}"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
                                 <p>Thời Trang Trẻ</p>
                             </div>
@@ -424,7 +424,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
                             <div class="counters-item">
                                 <i class="fa fa-rocket fa-3x"></i>
-                                <strong data-to="5000"></strong>
+                                <strong data-to="{{ $countmevabe }}"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
                                 <p>Thời trang mẹ & bé</p>
                             </div>
@@ -432,9 +432,9 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
                             <div class="counters-item">
                                 <i class="fa fa-trophy fa-3x"></i>
-                                <strong data-to="1"></strong>
+                                <strong data-to="{{ $countusers }}"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
-                                <p>Người Đăng Ký</p>
+                                <p>Quản trị viên</p>
                             </div>
                         </div>
                         <!-- end first count item -->
@@ -484,9 +484,14 @@
                             <h3><font face="Comic sans MS">Gửi tin nhắn cho chúng tôi</font></h3>
                             {{-- If send mail success --}}
                             @if($message = Session::get('success'))
-                            <script type="text/javascript">
-                                alert('{{$message}}');
-                            </script>
+                                <script type="text/javascript">
+                                    alert('{{$message}}');
+                                </script>
+                            @endif
+                            @if (\Session::has('error'))
+                                <script type="text/javascript">
+                                    alert('{!! \Session::get('error') !!}');
+                                </script>
                             @endif
                             <form action="{{ url('/sendemail') }}" method="POST" id="contact-form">
                                 {{ csrf_field() }}

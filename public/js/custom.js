@@ -161,12 +161,12 @@ $(document).ready(function(){
 				'subtotal': subtotal
 			}
 			dataList.push(obj);
-			sessionStorage.setItem("dataList", JSON.stringify(dataList));
+			localStorage.setItem("dataList", JSON.stringify(dataList));
 			var n = dataList.length;
 		}
 	});
 
-	var json = sessionStorage.getItem("dataList");
+	var json = localStorage.getItem("dataList");
 	if(json == null || json == '') return;
 	dataList = JSON.parse(json);
 	for (var i = 0; i < dataList.length; i++) {
@@ -189,7 +189,7 @@ $(document).ready(function(){
 	$('#cartForm').submit(function(){
 		if (confirm('Check your information again, if you are sure then press OK')) {
 			alert("Your order has been sent!");
-			sessionStorage.clear();
+			localStorage.clear();
 			return true;
 		} else {
 			return false;
@@ -201,8 +201,8 @@ $(document).ready(function(){
 //function delete item from YOUR CART
 function deleteProduct(index) {
 	dataList.splice(index, 1);
-	sessionStorage.removeItem("dataList");
-	sessionStorage.setItem("dataList", JSON.stringify(dataList));
+	localStorage.removeItem("dataList");
+	localStorage.setItem("dataList", JSON.stringify(dataList));
 	location.reload();
 }
 

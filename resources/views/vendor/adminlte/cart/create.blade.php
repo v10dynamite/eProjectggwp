@@ -47,6 +47,13 @@
 			<div class="panel panel-info" style="opacity: 0.92;">
 				<div class="panel-heading"><span class="fa fa-shopping-cart"></span> <b>THÔNG TIN GIAO DỊCH</b></div>
 				<div class="panel-body">
+					@if (\Session::has('error'))
+						<div class="alert alert-danger">
+							<ul>
+								<li>{!! \Session::get('error') !!}</li>
+							</ul>
+						</div>
+					@endif
 					<form action="{{ url('cart') }}" method="POST" id="cartForm">
 						{{ csrf_field() }}
 						<input type="hidden" name="cartTotal" id="cartTotal"> {{-- Set total for input value from localstorage --}}
