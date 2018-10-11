@@ -312,7 +312,7 @@
                                 <p>Vui tính, thật thà, chăm chỉ ^^</p>
                                 <ul class="social-links text-center">
                                     <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="https://www.facebook.com/giang.truong.77"><i class="fab fa-facebook fa-lg"></i></a></li>
                                     <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
                                 </ul>
                             </figcaption>
@@ -332,7 +332,7 @@
                                 <p>Người bình thường aka Mr.nonDAFUg ^^</p>
                                 <ul class="social-links text-center">
                                     <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="https://www.facebook.com/hoang.ngohuy.378"><i class="fab fa-facebook fa-lg"></i></a></li>
                                     <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
                                 </ul>
                             </figcaption>
@@ -352,7 +352,7 @@
                                 <p>Vui tính, năng động, sáng tạo ^^</p>
                                 <ul class="social-links text-center">
                                     <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100007406707720"><i class="fab fa-facebook fa-lg"></i></a></li>
                                     <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
                                 </ul>
                             </figcaption>
@@ -372,7 +372,7 @@
                                 <p>Đẹp trai, thông minh, vui tính ^^</p>
                                 <ul class="social-links text-center">
                                     <li><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
-                                    <li><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                                    <li><a href="https://www.facebook.com/tran.tu.98229241"><i class="fab fa-facebook fa-lg"></i></a></li>
                                     <li><a href=""><i class="fab fa-google-plus fa-lg"></i></a></li>
                                 </ul>
                             </figcaption>
@@ -470,8 +470,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
                         <div class="contact-address">
                             <h3><font face="Comic sans MS">Thông Tin Liên Lạc</font></h3>
-                            <p><font face="Comic sans MS">0968.710.535</font></p>
-                            <p><font face="Comic sans MS">https://www.facebook.com/truonggiang/</font></p>
+                            <p><font face="Comic sans MS">0968.710.535 - 0963.273.254</font></p>
+                            <p><font face="Comic sans MS">https://www.facebook.com/giang.truong.77</font></p>
                             <p><font face="Comic sans MS">crystalboutique99@gmail.com</font></p>
                             <p><font face="Comic sans MS">Tòa nhà Aptech, 285 Đội Cấn, Liễu Giai, Ba Đình, Hà Nội</font></p>
                         </div>
@@ -521,9 +521,9 @@
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
                         <ul class="footer-social">
 
-                            <li><a href="https://Myclass.vn"><i class="fab fa-twitter fa-2x"></i></a></li>
-                            <li><a href="https://myclass.vn/"><i class="fab fa-dribbble fa-2x"></i></a></li>
-                            <li><a href="https://www.facebook.com/lophocviet"><i class="fab fa-facebook fa-2x"></i></a></li>
+                            <li><a href="https://www.facebook.com/tran.tu.98229241"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100007406707720"><i class="fab fa-dribbble fa-2x"></i></a></li>
+                            <li><a href="https://www.facebook.com/hoang.ngohuy.378"><i class="fab fa-facebook fa-2x"></i></a></li>
                         </ul>
                     </div>
                     <!-- end footer social links -->
