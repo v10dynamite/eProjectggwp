@@ -13,6 +13,8 @@
 					Home
 				@elseif(Request::is('cart'))
 					{{ trans('adminlte_lang::message.customerordered') }}
+				@elseif(Request::is('cart/*/edit')) {{-- The "*" allows a pattern parameter --}}
+					Order's detail
 				@elseif(Request::is('user'))
 					List Admins
 				@elseif(Request::is('product/create'))

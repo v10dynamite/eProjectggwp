@@ -44,21 +44,31 @@ desired effect
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
+
+            {{-- home logged in --}}
             @yield('main-content')
+            {{-- user (admin) --}}
             @yield('usersForm')
             @yield('usersList')
             @yield('userEdit')
+            {{-- product --}}
             @yield('productsForm')
             @yield('productsList')
             @yield('productEdit')
+            {{-- category --}}
             @yield('categoriesForm')
             @yield('categoriesList')
             @yield('categoryEdit')
+            {{-- gallery --}}
             @yield('galleriesForm')
             @yield('galleriesList')
             @yield('galleryEdit')
+            {{-- customer ordered (client side + manager in admin side) --}}
             @yield('customerordered')
+            @yield('detailcart')
+
             {{-- @yield('ajaxall') --}}
+
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 

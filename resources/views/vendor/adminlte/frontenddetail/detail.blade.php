@@ -43,6 +43,7 @@
 										{{-- <input type="hidden" name="total" id="total"> --}}
 										<button type="submit" id="btnAddtocart" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
 										<a href="{{ route('cart.create') }}" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> View Cart</a>
+										<a href="{{ route('thoitrangcongso') }}" class="btn btn-link btn-lg"><span class="	glyphicon glyphicon-new-window"></span> Tiếp tục mua hàng</a>
 									</span>
 								</form>
 							</div>

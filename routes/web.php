@@ -175,6 +175,11 @@ Route::group(['middleware' => 'auth'], function () {
 		'uses' => 'CartController@index'
 	]);
 
+	// Route::get('cart/detail/{ordering_id}', [
+	// 	'as' => 'cart.detail',
+	// 	'uses' => 'CartController@detail'
+	// ]);
+
 
 	//Ajax for insert data (NOT USED)
 	Route::get('/ajaxdata', [

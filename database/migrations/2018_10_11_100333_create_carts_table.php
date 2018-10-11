@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->string('cartdetail', 8000);
             $table->string('cartTotal');
             $table->timestamps();
         });

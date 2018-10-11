@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cart;
+use App\CartDetail;
 
 class CartController extends Controller
 {
@@ -48,6 +49,7 @@ class CartController extends Controller
         $cart->email = $input['email'];
         $cart->address = $input['address'];
         $cart->cartTotal = $input['cartTotal'];
+        $cart->cartdetail = $input['cartdetail'];
         $cart->save();
         return redirect()->route('cart.create')->with('success', 'Your order has been sent!');
     }
@@ -63,15 +65,16 @@ class CartController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($ordering_id)
     {
-        //
+        $customer = Cart::find($ordering_id)->toArray();
+        // var_dump($customer);
+        // die();
+        $obj = Cart::find($ordering_id, ['cartdetail']);
+        $cartdetail = json_decode($obj->cartdetail);
+        return view('adminlte::cart.edit', compact('customer','cartdetail'));
+
     }
 
     /**

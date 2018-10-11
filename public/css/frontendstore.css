@@ -87,7 +87,7 @@ this code will handle the thumbnail zoom when hover*/
 
 /* Thumbnail */
 #zoom-thumbnail #product-thumbnail  {
-  width: 397px;
+  width: 100%;
   height: 595px;
   transition-duration: 0.5s;
   /* Safari & Google Chrome */

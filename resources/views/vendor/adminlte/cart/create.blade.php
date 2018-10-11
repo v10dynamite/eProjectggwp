@@ -50,6 +50,7 @@
 					<form action="{{ url('cart') }}" method="POST" id="cartForm">
 						{{ csrf_field() }}
 						<input type="hidden" name="cartTotal" id="cartTotal"> {{-- Set total for input value from localstorage --}}
+						<input type="hidden" name="cartdetail" id="cartdetail"> {{-- Set cartdetail array for input value from localstorage --}}
 						<div class="form-group">
 							<label for="name">Fullname</label>
 							<input type="text" name="name" id="name" placeholder="Your Fullname" class="form-control" required>
@@ -79,8 +80,8 @@
 
 @if(count($errors) > 0)
 	<script type="text/javascript">
-		alert('Your cart is empty!');
-	</script>					
+		alert('Your cart is empty, please return and add some items for your cart');
+	</script>
 @endif
 
 @endsection

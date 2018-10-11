@@ -8,7 +8,7 @@
 
 @section('home-content')
 
-<section style="min-height: 80vh;" id="slider">
+<section style="min-height: 60vh;" id="slider">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators bullet -->
@@ -220,7 +220,7 @@
 
                     @foreach($damnu as $row)
                         <figure class="mix work-item action">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -229,7 +229,7 @@
 
                     @foreach($aonu as $row)
                         <figure class="mix work-item adventure">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -238,7 +238,7 @@
 
                     @foreach($quannu as $row)
                         <figure class="mix work-item casual">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -247,7 +247,7 @@
 
                     @foreach($chanvay as $row)
                         <figure class="mix work-item multiplayer">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -256,7 +256,7 @@
 
                     @foreach($bolien as $row)
                         <figure class="mix work-item RPG">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -265,7 +265,7 @@
 
                     @foreach($mevabe as $row)
                         <figure class="mix work-item sport">
-                            <div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
+                            <div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $row->thumbnail }}" alt="{{ $row->description }}" class="gamelist"></div>
                             <figcaption class="overlay simpleCart_shelfItem">
                                 <div class="pricelist"><span style="font-weight: bold;">{{ $row->description }} </span></div>
                             </figcaption>
@@ -294,7 +294,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
+                    <div class="sec-title text-center wow fadeInUp animated"data-wow-duration="700ms">
                         <h2>THÀNH VIÊN NHÓM</h2>
                         <div class="devider"><img src="{{ asset('img/logo_44.jpg') }}"></div>
                     </div>
@@ -395,7 +395,7 @@
         ==================================== -->        
         
         <section id="facts" class="facts">
-            <div style="min-height: 100vh;" class="parallax-overlay">
+            <div style="min-height: 95vh;" class="parallax-overlay">
                 <div class="container">
                     <div class="row number-counters">
 
@@ -408,31 +408,31 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
                             <div class="counters-item">
                                 <i class="fa fa-clock fa-3x"></i>
-                                <strong data-to="20">0</strong>
+                                <strong data-to="20"></strong>
                                 
-                                <p>Thời Trang Xưa</p>
+                                <p>Thời Trang Công Sở</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="counters-item">
                                 <i class="fa fa-users fa-3x"></i>
-                                <strong data-to="25">0</strong>
+                                <strong data-to="25"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
-                                <p>Thời Trang Hiện Đại</p>
+                                <p>Thời Trang Trẻ</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
                             <div class="counters-item">
                                 <i class="fa fa-rocket fa-3x"></i>
-                                <strong data-to="5000">0</strong>
+                                <strong data-to="5000"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
-                                <p> Các Thành Viên </p>
+                                <p>Thời trang mẹ & bé</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
                             <div class="counters-item">
                                 <i class="fa fa-trophy fa-3x"></i>
-                                <strong data-to="1">13000</strong>
+                                <strong data-to="1"></strong>
                                 <!-- Set Your Number here. i,e. data-to="56" -->
                                 <p>Người Đăng Ký</p>
                             </div>

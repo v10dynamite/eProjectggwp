@@ -69,7 +69,7 @@
 										<input type="hidden" name="_method" value="DELETE">
 										<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
 									</form>
-								</td> 
+								</td>
 								<td>
 									<a href="{{ action('GalleryController@edit', $row['id']) }}" class="btn btn-info">
 										<span class="glyphicon glyphicon-cog"></span>

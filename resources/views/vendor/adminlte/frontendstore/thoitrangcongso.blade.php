@@ -13,7 +13,7 @@
 	<div class="container-fluid">
 		<div class="navbar navbar-default" role="navigation">
 			<div class="container" style="text-align: center;">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav" style="width: 100%;">
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangcongso') }}">THỜI TRANG CÔNG SỞ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('thoitrangtre') }}">THỜI TRANG TRẺ</a></li>
 					<li class="nav-item"><a class="page-scroll" href="{{ route('mevabe') }}">MẸ VÀ BÉ</a></li>
@@ -64,13 +64,13 @@
 						@if(!empty($products))
 							@foreach($products as $product)
 								<figure class="mix work-item action multiplayer">
-									<div class="testimg"><img style="width: 266px;height: 396px;" src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="gamelist"></div>
+									<div class="testimg"><img style="width: 100%;height: 396px;" src="{{ $product->thumbnail }}" alt="{{ $product->title }}" class="gamelist"></div>
 									<figcaption class="overlay simpleCart_shelfItem">
 										<a class="gamedetail"  title="Detail" href="{{ action('ProductController@detail', $product->productid) }}">Chi Tiết</a>
 										<h4>Mã: {{ $product->productid }}</h4>
 										<p>{{ $product->description }}</p>
 										<div class="pricelist"><span id="price">${{ $product->price }}</span><img src="img/icon-windown.png" alt=""> <img src="img/icon-apple.png" alt=""> <img src="img/icon-xbox_0.png" alt=""></div>
-										<a class="item_add" title="Detail" href="{{ action('ProductController@detail', $product->productid) }}"><span class="item_price" style="display: none;">${{ $product->price }}</span><button id="addtocart">Mua hàng </button></a>
+										<a class="item_add" title="Detail" href="{{ action('ProductController@detail', $product->productid) }}"><span class="item_price" style="display: none;">${{ $product->price }}</span><button id="addtocart" style="width: 100%;">Mua hàng </button></a>
 									</figcaption>
 								</figure>
 							@endforeach

@@ -32,8 +32,9 @@
 							<th>Customer Email</th>
 							<th>Customer Address</th>
 							<th>Total ($)</th>
-							<th>Updated At</th>
+							<th>Ordered Date</th>
 							<th>Delete</th>
+							<th>Info</th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -44,8 +45,9 @@
 							<th>Customer Email</th>
 							<th>Customer Address</th>
 							<th>Total ($)</th>
-							<th>Updated At</th>
+							<th>Ordered Date</th>
 							<th>Delete</th>
+							<th>Info</th>
 						</tr>
 					</tfoot>
 					<tbody>
@@ -65,6 +67,11 @@
 										<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
 									</form>
 								</td>
+								<td>
+									<a href="{{ action('CartController@edit', $row['ordering_id']) }}" class="btn btn-info">
+										<span class="fa fa-info"></span>
+									</a>
+								</td>
 							</tr>
 						@endforeach
 					</tbody>
@@ -72,9 +79,9 @@
 			</div>
 		</div>
 		@if(count($latest_update)>0)
-			<div class="panel-footer small text-muted">Last updated at {{ $latest_update[0]['updated_at'] }}</div>
+			<div class="panel-footer small text-muted">Last ordered at {{ $latest_update[0]['updated_at'] }}</div>
 		@else
-			<div class="panel-footer small text-muted">Last updated at</div>
+			<div class="panel-footer small text-muted">Last ordered at</div>
 		@endif
 	</div>
 

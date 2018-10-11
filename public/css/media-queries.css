@@ -40,7 +40,7 @@
 
 /* slider */
 .carousel-caption{
-  top: 0;
+  /*top: 0;*/
 }
 .carousel-caption h2 {
   font-size: 30px;
@@ -63,9 +63,9 @@
   width: 50px;
 }
 .service-icon{
-  left: 50%;
+  /*left: 50%;*/
   position: absolute;
-  transform: translateX(-50%);
+  /*transform: translateX(-50%);*/
 }
 
 .service-desc {
@@ -136,7 +136,7 @@ background-position: center top !important;
 
 @media only screen and (max-width: 767px) {
 .carousel-caption{
-  margin-top: 0;
+  top: 10%;
 }
 .sec-sub-title p {
   font-size: 14px;
@@ -171,12 +171,12 @@ background-position: center top !important;
 .service-icon {
   float: none;
   width: 50px;
-  padding-left:none;
+  /*padding-left:none;*/
 }
 .service-icon{
-  left: 50%;
+  /*left: 50%;*/
   position: absolute;
-  transform: translateX(-50%);
+  /*transform: translateX(-50%);*/
 }
 .service-desc {
   margin-left: 0;
@@ -195,7 +195,7 @@ background-position: center top !important;
 }
 
 #features{
-  display: none;
+  /*display: none;*/
 }
 
 
